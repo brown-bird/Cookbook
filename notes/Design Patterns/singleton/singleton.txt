@@ -1,0 +1,18 @@
+Singleton pattern notes
+
+Usages:
+* thread pools, caches, dialog boxes, objects that handle preferences and registry settings, objects used for logging, and objects that act as device drivers to devices like printers and graphics cards.
+
+Problem it solves: 
+incorrect behavior with multiple instances, overuse of resources, and inconsistent results. 
+
+Questions to consider:
+ 1. Will more than one instance of this class cause problems?
+ 2. Will more than one instance of this class unnecessarily overburden a resource? i.e. a cache could cut back on resource usage. 
+ 
+Problems it causes:
+* Testing multiple instances of a class which is a client of or contains a singleton as a member suffers from coupling through the singleton.
+* To test properly, singleton must maintain a backdoor (i.e. not intended for use other than testing) to either create additional instances or mutator methods to break static dependencies. 
+* All member classes are transiently global. 
+* A singleton with state is essentially a global variable. This breaks the OO principle of encapsulation. 
+* Different threads accessing a singleton can end up with different instances. i.e. a race condition. Can be solved with "synchronized" keyword, however synchronization is expensive and only needed the very first time the instance is set. 
