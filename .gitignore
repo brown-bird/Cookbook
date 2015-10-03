@@ -1,1 +1,6 @@
 nbproject/
+*/build/*
+*/build.xml
+*manifest.mf
+*/nb-configuration.xml
+*/target/*
