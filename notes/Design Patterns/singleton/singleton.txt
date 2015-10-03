@@ -17,6 +17,9 @@ C. All member classes are transiently global.
 D. A singleton with state is essentially a global variable. This breaks the OO principle of encapsulation. 
 E. Different threads accessing a singleton can end up with different instances. i.e. a race condition. 
 F. Multiple Class Loaders can lead to more than one instance of a singleton.
+G. Inappropriate usage can mislead subsequent users of a class. It's implies that 
+there "should" only be one instance of a class "ever". If this is not true, developers
+could be confused. 
 
 Solving synchronization:
 1. Use the "synchronized" keyword, however synchronization is expensive and only needed the very first time the instance is set. If calling getInstance is not a high frequency call in the application using this method can preserve the lazy instantiation of the uniqueInstance and may be suitable. 

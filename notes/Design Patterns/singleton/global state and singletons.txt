@@ -1,0 +1,51 @@
+Clean Code talks (google 2008)
+Global State and singletons
+
+* Object state is transient and not subject to garbage collections
+	* class state is persistent to lifetime of JVM
+
+	* makes testing difficult. Multiple executions can produce different results
+	* Flakiness
+	* Order of tests matter
+	* Cannot run tests in parallel
+	
+* Global State is hidden from public api
+	* multiple executions can produce different results
+	
+* Global state hides dependencies from clients/testers/programmers
+	* only those with insider knowledge understand object graph:
+		* instantiation order
+	* new people struggle with understanding dependencies
+	
+* Dependency injection enforces the order of initialization at compile time
+ 
+* Each layer can be tested in isolation
+	* global state provides no seams to isolate the SUT, i.e. you can't mock resources, db's, etc. 
+	
+* Global state is the root of *most test problems
+	* objects are secretly communicating with each other
+	* successive calls to the same method can produce different results unexpectedly
+	* no way to isolate components for testing
+		* encourages test code in production:
+				* back door methods only used in testing (not testing actual usage)
+				* need to remember to clean up global state after each test. Can't rely on garbage collection like tests without global state. Maybe you remember but someone comes after you and screws things up 
+				
+* Static instance is transitive:
+	* Any object fields that are members of the Singleton are global variables as well and so on down the object graph ad infinitum!!! 
+	
+* Don't mix object construction with business logic. In constructor ask for what you need, don't create things. 
+
+* When a constructor needs many many parameters there is a design problem. The class may be doing too much. Or you may be able to abstract/encapsulate some of the parameters in objects themselves. I.e. extract class
+
+* Dependency Injection makes the dependencies explicit. It doesn't make dependencies better or worse. The dependencies are already there. You are no longer pretending that the dependencies are not there by using global state (and paying the associated costs of global state). 
+
+* Why global variables are evil
+http://stackoverflow.com/questions/7026507/why-are-static-variables-considered-evil
+
+* because static methods are class level methods that cannot be overridden they therefore do not provide seams. seams are useful when testing because you can modify the behavior of the method by overriding the method without actually changing the method in production.
+
+* when objects are passed into methods which perform business logic and interfaces are used, behavior can be overridden and modified for testing without actually modifying the production code. this is another good argument for the use of factories and separating object creation logic from business logic.
+
+* why create a subclass for testing? We want to create a subclass so that we can either sense or separate the system under test. creating a subclass for testing allows us to modify the behavior at a particular scene we can either cancel the behavior or return a default value either way it gives us some control to either since the behavior that an object is doing or control it. this can be a good way to break dependencies such as to databases or network services for the purpose of testing.
+
+* global state is difficult to reason about because it breaks encapsulation objects may be manipulated and communicate to each other without dependents knowing about this particular communication or modifications. Good encapsulation allows sophisticated and complex applications to be more easily tested and maintained throughout their life cycle. by modularizing components and creating applications that are designed for testability we can reason about their behavior under different circumstances and more effectively test them there by proving their correctness.
