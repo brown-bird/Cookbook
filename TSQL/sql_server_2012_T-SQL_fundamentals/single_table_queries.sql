@@ -93,6 +93,40 @@
 	HAVING COUNT(*) > 1;
 
 /*****************************************************************************************************************
+	ORDER BY
+		0. ORDER BY allows you to sort the rows in the output for presentation purposes. ORDER BY is logically
+		processed last. 
+
+		1. Only way to guarantee presetation order. Result is not a "table" but a cursor. A query with an 
+		ORDER BY clause results in what standard SQL calls a "cursor" -- a nonrelational result with order 
+		guaranteed among rows. Some language elements and operations in SQL expect to work with table results
+		and not with cursors e.g. table expressions and set operators
+
+		2. ORDER BY is the only clause where aliases created in SELECT clauses can be refered to. 
+
+		3. ASC or DESC keywords specified after the ORDER BY expression change the sort order to ascending and
+		descending respectively. Ascending is the default order and ASC is optional. 
+
+		4. You are allowed to specify ordinal positions of columns as they are specified in the SELECT clause,
+		but this is bad practice as changes in the SELECT clause that aren't also applied to the ORDER BY 
+		clause can create silent errors. Explicitly specifying column names avoids these kinds of errors. 
+
+		5. You can specify columns in the ORDER BY clause that aren't present in the SELECT clause, meaning you 
+		can sort by something you don't necessarily want to return in the output. However, when DISTINCT is 
+		passed in the SELECT clause you cannot specify columns in ORDER BY that aren't in the SELECT clause also.
+******************************************************************************************************************/
+	SELECT 
+		empid,
+		YEAR(orderdate) AS orderYear,
+		COUNT(*) AS numOrders
+	FROM Sales.Orders
+	WHERE custid = 71
+	GROUP BY empid, YEAR(orderdate)
+	HAVING COUNT(*) > 1
+	ORDER BY empid, orderYear
+
+
+/*****************************************************************************************************************
 	Built-in Functions
 ******************************************************************************************************************/	
 /*****************************************************************************************************************
@@ -122,3 +156,4 @@
 		COUNT(DISTINCT custid) AS numcusts
 	FROM Sales.Orders
 	GROUP BY empid, YEAR(orderdate);
+
