@@ -4,6 +4,7 @@
 
 /*****************************************************************************************************************
 	Links
+		
 		1. MSDN reference conventions: https://msdn.microsoft.com/en-us/library/ms177563(v=sql.110)
 		2. Delimiting Identifier Names: https://msdn.microsoft.com/en-us/library/ms175874
 
@@ -13,13 +14,17 @@
 		3. GROUP BY
 		4. HAVING
 		5. SELECT
+			- Expressions
+			- DISTINCT
 		6. ORDER BY
+			- TOP / OFFSET-FETCH
 
 	Output order from a query is not guaranteed unless the "Order By" clause is used. 
 ******************************************************************************************************************/
 	
 /*****************************************************************************************************************
 	GROUP BY
+		
 		0. GROUP BY produces a group for each unique combination of GROUP BY list items in the order specified. 
 		One row in the result set represents one group. 
 
@@ -44,6 +49,7 @@
 
 /*****************************************************************************************************************
 	HAVING
+		
 		0. Specify a predicate filter to apply to groups as opposed to filtering individual rows, like "WHERE".
 		Groups which evaluate to FALSE or UNKNOWN are filtered out
 
@@ -62,6 +68,7 @@
 
 /*****************************************************************************************************************
 	SELECT
+		
 		0. Projection from relational algebra. Second to last logical operation to be executed on dataset.
 
 		1. You can "alias" columns by passing a new name after the column using the optional "AS" keyword or a space. 
@@ -80,6 +87,9 @@
 
 		4. You are not allowed to refer to a alias created in the SELECT clause in any other clauses as the alias
 		is not created yet. You cannot refer to an alias created in the same SELECT clause either. 
+
+		5. Expressions in the SELECT list are evaluated before the DISTINCT clause(if one exists). This applies
+		to expressions based on window functions. 
 ******************************************************************************************************************/
 
 -- 1. Alias a column
@@ -94,6 +104,7 @@
 
 /*****************************************************************************************************************
 	ORDER BY
+		
 		0. ORDER BY allows you to sort the rows in the output for presentation purposes. ORDER BY is logically
 		processed last. 
 
@@ -114,6 +125,9 @@
 		5. You can specify columns in the ORDER BY clause that aren't present in the SELECT clause, meaning you 
 		can sort by something you don't necessarily want to return in the output. However, when DISTINCT is 
 		passed in the SELECT clause you cannot specify columns in ORDER BY that aren't in the SELECT clause also.
+
+		6. Using ORDER BY on a column with duplicate values will not give a deterministic result ordering unless
+		a tie breaker is specified in the ORDER BY clause. 
 ******************************************************************************************************************/
 	SELECT 
 		empid,
@@ -129,8 +143,10 @@
 /*****************************************************************************************************************
 	Built-in Functions
 ******************************************************************************************************************/	
+
 /*****************************************************************************************************************
 	Date and Time Functions
+		
 		1. YEAR(date) - returns the year part of a date
 ******************************************************************************************************************/
 
@@ -142,6 +158,7 @@
 
 /*****************************************************************************************************************
 	AGGREGATE FUNCTIONS
+		
 		0. All aggregate functions ignore "NULL" values except COUNT(*). If column "qty" contains {2, 2, null, 8}
 		COUNT(qty) will return 3, but COUNT(*) will return 4. 
 
@@ -156,4 +173,110 @@
 		COUNT(DISTINCT custid) AS numcusts
 	FROM Sales.Orders
 	GROUP BY empid, YEAR(orderdate);
+
+/*****************************************************************************************************************
+	TOP
+		
+		0. TOP allows limiting the number or percentage of rows that a query returns. 
+		It takes 2 parameters:
+			-1- The number or percent of rows to return
+			-2- The ordering 
+
+		1. TOP, like ORDER BY, is evaluated after the SELECT clause including the DISTINCT option. If DISTINCT is
+		specified in the SELECT clause then the TOP filter is evaluated after duplicates are removed. The result
+		order of using TOP without an ORDER BY clause is undefined. SQL server returns the first n rows it accesses
+		first where n is the number parameter specified in the TOP clause.
+
+		2. When using TOP the ORDER BY clause gives TOP meaning. e.g. ORDER BY purchaseDate DESC 
+
+		3. The PERCENT keyword is rounded up.
+
+		4. If there are duplicate values in the ORDER BY clause you can either specify a tiebreaker column or
+		you can use the WITH TIES option for TOP which will return the top n rows based on the ORDER BY parameter
+		plus all other rows that have the same value as the last row of the original rows returned. 
+******************************************************************************************************************/
+
+-- return 5 most recent orders 
+SELECT TOP (5) orderid, orderdate, custid, empid
+FROM Sales.Orders
+ORDER BY orderdate DESC;
+
+-- PERCENT keyword example
+SELECT TOP (1) PERCENT orderid, orderdate, custid, empid
+FROM Sales.Orders
+ORDER BY orderdate DESC;
+
+-- 4. with ties option
+SELECT TOP (5) WITH TIES orderid, orderdate, custid, empid
+FROM Sales.Orders
+ORDER BY orderdate DESC;
+
+/*****************************************************************************************************************
+	OFFSET-FETCH
+		
+		0. OFFSET-FETCH is considered part of the ORDER BY clause. Similar to TOP but is Standard SQL and supports 
+		skipping where TOP doesn't. 
+
+		1. OFFSET specifies how many rows to skip.
+
+		2. FETCH specifies how many rows to filter after skipping. 
+
+		3. OFFSET-FETCH must have an ORDER BY clause. FETCH cannot be used without OFFSET, but OFFSET can be used by itself.
+		To use only FETCH: "OFFSET 0 ROWS"
+
+		4. ROW and ROWS keywords are intercahngeable. Likewise FIRST and NEXT are interchangeable. 
+
+		5. OFFSET-FETCH supports skipping which TOP doesn't, but OFFSET-FETCH doesn't support PERCENT or WITH TIES.
+		Prefer OFFSET-FETCH when possible as it is standard SQL. 
+******************************************************************************************************************/
+
+-- OFFSET-FETCH
+SELECT orderid, orderdate, custid, empid
+FROM Sales.Orders
+ORDER BY orderdate, orderid
+OFFSET 50 ROWS FETCH NEXT 25 ROWS ONLY;
+
+
+/******************************************************************************************************************
+Quick look at Window Functions
+
+	0. A window function is a function that, for each row in the underlying query, operates on a window (set) of 
+	rows and computes a scalar (single) result value. The window of rows is defined using an OVER clause.
+
+	1. The OVER clause exposes to the function a subset of the rows from the underlying query's result set. The 
+	OVER clause can restrict the rows in the window by using the PARTITION BY clause subclause, and it can define ordering for
+	the calculation using it's own ORDER BY subclause. 
+
+	2. The ROW_NUMBER function assigns unique, sequential, incrementing integers to the rows in the result
+	within the respective partition, based on the indicated ordering. Note that if the ORDER BY list is non-unique
+	the result of ROW_NUMBER is non-deterministic. Add a tie-breaker to the ORDER BY list to ensure a single correct
+	result. 
+******************************************************************************************************************/
+SELECT orderid, custid, val,
+  ROW_NUMBER() OVER(PARTITION BY custid
+                    ORDER BY val) AS rownum
+FROM Sales.OrderValues
+ORDER BY custid, val;
+
+
+/******************************************************************************************************************
+	Predicates and Operators
+
+	0. Predicates are logical expressions that evaluate to TRUE, FALSE, or UNKNOWN. Examples include IN, BETWEEN, 
+	and LIKE.
+
+	1. IN checks whether a value , or scalar expression, is equal to at least one of the elements in a set. 
+
+	2. BETWEEN allows you tocheck whether a value is in a specified range, inclusive of two specified boundary values. 
+
+	3. LIKE checks whether a character string value meets a specified pattern. The prefix leter 'N' as in the example 
+	N'D%' stands for National and is used to denote that a character string is of a Unicode data type(NCHAR or NVARCHAR)
+	as opposed to a regular character data type(CHAR or VARCHAR). 
+
+	4. T-SQL supports the folloning comparison operators: =, >, <, >=, <=, <>, !=, !>, !<, of which the last three are 
+	not standard. Prefer the standard alternatives of non-standard operators. Combine logical exressions with the
+	logical operators OR and AND. Negate an expression with NOT. 
+******************************************************************************************************************/
+
+
 
