@@ -305,6 +305,7 @@ SELECT custid, country, region, city
 FROM Sales.Customers
 WHERE region <> N'WA';
 
+-- Do not use. All rows evaluate to UNKNOWN
 SELECT custid, country, region, city
 FROM Sales.Customers
 WHERE region = NULL;

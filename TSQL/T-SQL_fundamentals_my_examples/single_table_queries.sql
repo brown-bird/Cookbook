@@ -278,5 +278,51 @@ ORDER BY custid, val;
 	logical operators OR and AND. Negate an expression with NOT. 
 ******************************************************************************************************************/
 
+/******************************************************************************************************************
+	CASE Expressions
 
+	0. A scalar expression that returns a value based on conditional logic. 
+
+	1. Allowed wherever scalar expressions are allowed such as SELECT, WHERE, HAVING, and ORDER BY clauses and in 
+	CHECK constraints.
+
+	2. Two forms are "simple" and "searched". 
+		a. Simple form allows comparison of one value or scalar expresison with
+		a list of possible values and return a value for the first match. Else is the default when no match is found.
+		If no ELSE clause is specified it defaults to ELSE NULL.
+
+		b. The searched form allows specification of predicates in the WHEN clauses instead of simple equality 
+		comparisons.
+
+	3. Some functions which can be considered abbreviations of CASE expressions(ISNULL, COALESCE, IIF, and CHOOSE):
+		a. ISNULL (non-std) - takes two args, ISNULL(col1, ""), and returns the first which is not null or NULL if both are NULL.
+	
+		b. COALESCE (std) - like ISNULL but takes 2 more args. The behavior is the same as ISNULL. Prefer COALESCE as it
+		is standard. 
+
+		c. IIF (non-std) - like java ternary operator. IIF(<logical_expression>, <return if true>, <return if false>)
+
+		d. CHOOSE(non-std) returns the expression based on the passed in index value. 
+		CHOOSE(<index>, <expr 1>, <expr 2>, <expr n>)
+******************************************************************************************************************/
+
+/******************************************************************************************************************
+	NULL
+
+	0. A logical expression involving a missing, NULL, value evaluates to UNKNOWN.
+
+	1. The correct definition of the treatment SQL has for query filters is "accept TRUE", meaning reject FALSE and 
+	UNKNOWN. In CHECK constraints the treatment is "reject FALSE" meaning accept TRUE and UNKNOWN.
+
+	2. The negation of UNKOWN is UNKNOWN.
+
+	3. NULL = NULL evaluates to UNKNOWN. Use the predicates IS NULL and IS NOT NULL instead of = NULL and <> NULL.
+	Don't use the predicate ' = NULL ' as it always evaluates to UNKNOWN. 
+
+	4. For grouping and sorting two NULL marks are considered equal. GROUP BY groups all NULL marks together and the
+	ORDER BY sorts all NULL marks together. T-SQL sorts NULL marks before present values. 
+
+	5. Standard SQL treats NULL marks as different with respect to the usage of the UNIQUE constraint. T-SQL considers
+	two NULL marks equal (allowing only one NULL if the constraint is defined on a single column).
+******************************************************************************************************************/
 
