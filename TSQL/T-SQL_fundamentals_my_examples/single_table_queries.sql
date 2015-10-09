@@ -326,3 +326,103 @@ ORDER BY custid, val;
 	two NULL marks equal (allowing only one NULL if the constraint is defined on a single column).
 ******************************************************************************************************************/
 
+/******************************************************************************************************************
+	All - at - once
+
+	0. Beware of depending on execution order within a clause. All operations are considered to be executed at once.
+
+	1. You can force the order of operations within a CASE statement or you can rewrite the condition to exclude
+	order dependent operations. 
+******************************************************************************************************************/
+
+-- the alias "orderyear" cannot be used in the same SELECT statement
+SELECT 
+  orderid, 
+  YEAR(orderdate) AS orderyear, 
+  orderyear + 1 AS nextyear
+FROM Sales.Orders;
+
+
+-- The order of operations in the WHERE clause is not guaranteed therefore a divide by zero error is still possible.
+SELECT col1, col2
+FROM dbo.T1
+WHERE col1 <> 0 AND col2/col1 > 2;
+
+
+-- The CASE expression guarantees order of execution and can be used as a workaround
+SELECT col1, col2
+FROM dbo.T1
+WHERE
+  CASE
+    WHEN col1 = 0 THEN 'no' -- or 'yes' if row should be returned
+    WHEN col2/col1 > 2 THEN 'yes'
+    ELSE 'no'
+  END = 'yes';
+
+
+-- Redefining the WHERE clause to avoid the error prone calculation altogether
+SELECT col1, col2
+FROM dbo.T1
+WHERE (col1 > 0 AND col2 > 2*col1) OR (col1 < 0 AND col2 < 2*col1); 
+
+/******************************************************************************************************************
+	CHARACTER DATA TYPES
+
+	O. SQL Server supports two character data types: regular and unicode.
+
+	1. Regular data types include CHAR and VARCHAR, Unicode includes NCHAR and NVARCHAR. NCHAR and NVARCHAR
+	are specified with a leading N like N'foo'. N stands for National. Unicode is suitable for character data
+	stored in multiple languages. 
+
+	2. Regular data types require one byte of storage for each character, Unicode two bytes unless a surrogate
+	pair is needed, in which four bytes are used.
+
+	3. CHAR and NCHAR columns have fixed sizes according to their definition. CHAR(25) preserves space for 25 
+	characters. VARCHAR(25) defines a column of max size 25 but the space allocated depends on the length of 
+	what is stored. 
+
+	4. In standard SQL, single quotes are used to delimit literal character strings (for example 'literal')
+	and double quotes are used to delimit irregular identifiers such as table or column names that include a
+	space or start with a digit (for example "Irregular Identifier"). In SQL Server, there's a setting called
+	QUOTED_IDENTIFIER that controls the meaning of double quotes. You can apply this setting either at the database
+	level by using the ALTER DATABASE command or at the session level by using the SET command. When the setting is
+	on, the behavior is according to standard SQL, meaning that double quotes are used to delimit identifiers. 
+	When the setting is off the behavior is nonstandard and double quotes are used to delimit literal character
+	strings. Most database interfaces, including OLEDB and ODBC, turn this setting on by default. SQL server
+	also supports square brackets for irregular identifiers (for example [Irregular Identifier]). 
+
+	5. If you want to specify a single quote character inside a literal string delimited by single quotes you must
+	use two single quotes (for example 'Richard''s spaceship is purple')
+******************************************************************************************************************/
+
+/******************************************************************************************************************
+	Collation
+
+	0. A property of character data that encapsulates several aspects, including language support, sort order, 
+	case sensitivity, accent sensitivity, and more. 
+
+	1. The database collation determines the collation of the metadata of objects in the database and is used
+	as the default for user table columns. If the database collation is case insensitive, you can't crete two
+	tables called T1 and t1 within the same schema, but if the database is case sensitive you can. 
+
+	2. You can specify the collation for a column as part of its definition. If you don't the database collation
+	is used by default. 
+
+	3. You can convert the collation of an expression by using the COLLATE clause. In a case-insensitive environment
+	you can return a case sensitive comparison query. 
+******************************************************************************************************************/
+
+SELECT name, description
+FROM sys.fn_helpcollations();
+
+--USE TSQL2012
+
+-- the lastname column's collation is case insensitive. Returns one row. 
+SELECT empid, firstname, lastname
+FROM HR.Employees
+WHERE lastname = N'davis';
+
+-- making the query case sensitive using COLLATE. Returns no rows. 
+SELECT empid, firstname, lastname
+FROM HR.Employees
+WHERE lastname COLLATE Latin1_General_CS_AS = N'davis';
