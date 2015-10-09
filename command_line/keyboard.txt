@@ -7,15 +7,17 @@ Keyboard stuff
 ------------------------------------------------------------------------------------------
 Cursor Movement
 ------------------------------------------------------------------------------------------
-Key					Action
+Key				Action
 ------------------------------------------------------------------------------------------
 CTRL+A				Move cursor to the beginning of the line.
 ------------------------------------------------------------------------------------------
 CTRL+E				Move cursor to the end of the line.
 ------------------------------------------------------------------------------------------
-CTRL+F				Move cursor forward one character at a time; Same as right arrow key. 
+CTRL+F				Move cursor forward one character at a time; Same as right
+				arrow key. 
 ------------------------------------------------------------------------------------------
-CTRL+B				Move cursor backwards one character at a time; Same as left arrow key.
+CTRL+B				Move cursor backwards one character at a time; Same as
+				left arrow key.
 ------------------------------------------------------------------------------------------
 ALT+F				Move cursor forward one word.
 ------------------------------------------------------------------------------------------
@@ -27,26 +29,27 @@ CTRL+L				Clear the screen. Same as the clear command.
 ------------------------------------------------------------------------------------------
 Text Editing
 ------------------------------------------------------------------------------------------
-Key					Action
+Key				Action
 ------------------------------------------------------------------------------------------
 CTRL+D				Delete character at cursor location.
 ------------------------------------------------------------------------------------------
-CTRL+T				Transpose the character at the cursor location with the one preceding
-					it. 
+CTRL+T				Transpose the character at the cursor location with the
+				one preceding it. 
 ------------------------------------------------------------------------------------------
-ALT+T				Transpose the word at the cursor location with the one preceding it. 
+ALT+T				Transpose the word at the cursor location with the one
+				preceding it. 
 ------------------------------------------------------------------------------------------
-ALT+L				Convert the characters from the cursor location to the end of the word 
-					to lowercase. 
+ALT+L				Convert the characters from the cursor location to the end
+                                of the word to lowercase. 
 ------------------------------------------------------------------------------------------
-ALT+U				Convert the characters from the cursor location to the end of the word
-					to uppercase.
+ALT+U				Convert the characters from the cursor location to the end
+				of the word to uppercase.
 ------------------------------------------------------------------------------------------
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ------------------------------------------------------------------------------------------
 Cut and Paste (Killing and yanking)
 ------------------------------------------------------------------------------------------
-Key					Action
+Key				Action
 ------------------------------------------------------------------------------------------
 CTRL+K				Kill text from cursor to the end of the line. 
 ------------------------------------------------------------------------------------------
@@ -54,7 +57,9 @@ CTRL+U				Kill text from cursor to the beginning of the line.
 ------------------------------------------------------------------------------------------
 ALT+D				Kill text from cursor to the end of the current word. 
 ------------------------------------------------------------------------------------------
-ALT+BACKSPACE		Kill text from cursor to the beginning of the current word. 
-					If the cursor is at the beginning of a word, kill previous word.
+ALT+BACKSPACE			Kill text from cursor to the beginning of the current word. 
+				If the cursor is at the beginning of a word, kill previous
+				word.
 ------------------------------------------------------------------------------------------
-CTRL+Y				Yank the text from the kill-ring and insert it at the cursor location.
+CTRL+Y				Yank the text from the kill-ring and insert it at the cursor
+				location.
