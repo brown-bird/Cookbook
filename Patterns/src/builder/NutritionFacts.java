@@ -1,8 +1,3 @@
-/**
- * Example of the builder pattern as defined in 
- * Effective java 2nd edition :: chapter 2 :: item 2
- */
-
 package builder;
 
 // builder pattern

@@ -1,10 +1,5 @@
-
 package singletonpractice;
 
-/**
- *
- * @author Richard
- */
 public class EagerSingleton
 {
     private static EagerSingleton instance = new EagerSingleton();
