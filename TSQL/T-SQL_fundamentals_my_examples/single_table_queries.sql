@@ -415,8 +415,6 @@ WHERE (col1 > 0 AND col2 > 2*col1) OR (col1 < 0 AND col2 < 2*col1);
 SELECT name, description
 FROM sys.fn_helpcollations();
 
---USE TSQL2012
-
 -- the lastname column's collation is case insensitive. Returns one row. 
 SELECT empid, firstname, lastname
 FROM HR.Employees
@@ -426,3 +424,191 @@ WHERE lastname = N'davis';
 SELECT empid, firstname, lastname
 FROM HR.Employees
 WHERE lastname COLLATE Latin1_General_CS_AS = N'davis';
+
+/******************************************************************************************************************
+OPERATORS AND FUNCTIONS (CHARACTER DATA)
+
+	0. FUNCTIONS:
+		- CONCAT
+		- SUBSTRING
+		- LEFT
+		- RIGHT
+		- LEN
+		- DATALENGTH
+		- CHARINDEX
+		- PATINDEX
+		- REPLACE
+		- REPLICATE
+		- STUFF
+		- UPPER
+		- LOWER
+		- RTRIM, LTRIM
+		- FORMAT
+
+	1. You can use the "+" to concantenate strings together. Standard SQL specifies that concantenation with a 
+	NULL results in a NULL. This is true in SQL Server. You can treat NULL as an empty string using the COALESCE
+	function. This functions takes a list of inputs and returns the first that is not NULL. 
+
+	2. CONCAT accepts a list of inputs and concatenates them. CONCAT automatically substitues NULL marks with 
+	empty strings. (2012 only)
+******************************************************************************************************************/
+
+-- Concatenation
+SELECT empid, firstname + N' ' + lastname AS fullname
+FROM HR.Employees;
+
+-- Listing 2-7: Query Demonstrating String Concatenation
+SELECT custid, country, region, city,
+  country + N',' + region + N',' + city AS location
+FROM Sales.Customers;
+
+-- convert NULL to empty string
+SELECT custid, country, region, city,
+  country + COALESCE( N',' + region, N'') + N',' + city AS location
+FROM Sales.Customers;
+
+-- using CONCAT (2012-only)
+SELECT custid, country, region, city,
+  CONCAT(country, N',' + region, N',' + city) AS location
+FROM Sales.Customers;
+
+/******************************************************************************************************************
+	3. SUBSTRING extracts a substring from a string. SUBSTRING(string, start, length)
+	index is "1" based. If the value of the length parameter exceeds the length of the string the function returns
+	all characters to the end of the string without raising an error. 
+******************************************************************************************************************/
+
+SELECT SUBSTRING('abcde', 1, 3); -- returns 'abc'
+
+/******************************************************************************************************************
+	4. LEFT and RIGHT are abbreviations of the SUBSTRING function, returning a requested number of characters
+	from the left or right end of the input string. 
+******************************************************************************************************************/
+
+SELECT RIGHT('abcde', 3); -- returns 'cde'
+SELECT LEFT('abcde', 3); -- returns 'abc'
+
+/******************************************************************************************************************
+	5. LEN and DATALENTH
+		a. LEN returns the number of characters in the input string. LEN(string)
+		
+		b. DATALENTH returns the number of bytes of storage for a string. For regular strings both LEN and DATALENGTH
+		return the same number. For Unicode characters LEN is 1/2 the number of bytes. LEN also excludes trailing
+		whitespace while DATALENGTH does not. 
+******************************************************************************************************************/
+SELECT LEN(N'abcde'); --returns 5
+SELECT DATALENGTH(N'abcde'); -- returns 10
+
+/******************************************************************************************************************
+	6. CHARINDEX returns the position of the first occurrence of a substring within a string.
+	CHARINDEX(substring, string, [start_pos]). You can optionally specify a third argument "start_pos" which is 
+	the location to start looking. If you don't specify a start position it starts looking from the beginning of 
+	the string. If the substring is not found it returns 0.
+******************************************************************************************************************/
+SELECT CHARINDEX(' ','Itzik Ben-Gan'); -- returns 6
+SELECT CHARINDEX(' ','Itzik Ben-Gan', 7); -- returns 0
+
+
+/******************************************************************************************************************
+	7. PATINDEX returns the first occurrence of a pattern within a string. 	PATINDEX(pattern, string)
+	The argument "pattern" uses similar patterns to those used by the LIKE predicate in T-SQL
+******************************************************************************************************************/
+SELECT PATINDEX('%[0-9]%', 'abcd123efgh'); -- 5
+
+
+/******************************************************************************************************************
+	8. The REPLACE function replaces all occurrences of a substring with another.  
+	REPLACE(string, substring1, substring2)
+******************************************************************************************************************/
+SELECT REPLACE('1-a 2-b', '-', ':'); -- '1:a 2:b'
+
+-- Using REPLACE to count the number of occurrences of a substring
+-- Replace the substring with an empty string and calculate the difference in length.
+SELECT empid, lastname,
+	LEN(lastname) - LEN(REPLACE(lastname, 'e', '')) AS numoccur
+FROM HR.Employees;
+
+
+/******************************************************************************************************************
+	9. REPLICATE replicates a string a requested number of times. REPLICATE(string, n)
+******************************************************************************************************************/
+SELECT REPLICATE('abc', 3); -- 'abcabcabc'
+
+-- Cool, but not necessary, use of RIGHT, REPLICATE, and CAST to pad a value with 0's 
+SELECT supplierid,
+  RIGHT(REPLICATE('0', 9) + CAST(supplierid AS VARCHAR(10)),
+        10) AS strsupplierid
+FROM Production.Suppliers;
+
+/******************************************************************************************************************
+	10. STUFF removes a substring from a string and insert a new substring instead. 
+	STUFF(string, pos, delete_length, insertString); Pass a delete length of 0 to not delete and insert only.
+******************************************************************************************************************/
+SELECT STUFF('xyz', 2, 1, 'abc'); -- 'xabcz'
+
+/******************************************************************************************************************
+	11. UPPER and LOWER return the input string with all uppercase or lowercase characters.
+
+	12. RTRIM and LTRIM return the input string with leading or trailing spaces removed. Use result of one as the
+	argument to the other to trim both sides together. 
+******************************************************************************************************************/
+
+/******************************************************************************************************************
+	13. FORMAT formats an input value as a character string based on a .NET format string and an optional culture.
+	FORMAT(input, format_string, culture) examples: https://msdn.microsoft.com/library/26etazsy.aspx
+******************************************************************************************************************/
+-- padding with 10 0's like earlier example using RIGHT, REPLICATE, and CAST
+SELECT FORMAT(1759, '0000000000'); -- '0000001759'
+SELECT FORMAT(1759, 'd10');        -- '0000001759'
+
+/******************************************************************************************************************
+	14. The LIKE Predicate - check whether a string matches a pattern.
+		Wildcards:
+		'%'       Percent wildcard --matches a string of any size, including an empty string
+		
+		'_'       Underscore wildcard -- matches a single character
+		
+		'[A,B,C]' Square brackets wildcard -- matches a single character that is a member of the list in brackets.
+		
+		'[A-Z]'   Square brackets range wildcard -- matches a single character that is within the specified range.
+		
+		'[^A-M]'   Square brackets carrot wildcard -- matches a single character that is NOT within the 
+					specified range.
+******************************************************************************************************************/
+
+-- Last name starts with D
+SELECT empid, lastname
+FROM HR.Employees
+WHERE lastname LIKE N'D%';
+
+-- Second character in last name is e
+SELECT empid, lastname
+FROM HR.Employees
+WHERE lastname LIKE N'_e%';
+
+-- First character in last name is A, B or C
+SELECT empid, lastname
+FROM HR.Employees
+WHERE lastname LIKE N'[ABC]%';
+
+-- First character in last name is A through E
+SELECT empid, lastname
+FROM HR.Employees
+WHERE lastname LIKE N'[A-E]%';
+
+-- First character in last name is not A through E
+SELECT empid, lastname
+FROM HR.Employees
+WHERE lastname LIKE N'[^A-E]%';
+
+-- First character in last name is not A through E
+SELECT empid, lastname
+FROM HR.Employees
+WHERE lastname LIKE N'[^A,B,C,D,E]%';
+
+/******************************************************************************************************************
+	ESCAPE -- keyword used to escape characters that are also wildcards. After the patter use the keyword ESCAPE
+	followed by the single character (which you know is not in the text) you want to use as an escape character.
+		col1 LIKE '%!_%' ESCAPE '!'
+	You can also use square brackets to escape the wildcard. col1 LIKE '%[_]%'
+******************************************************************************************************************/
