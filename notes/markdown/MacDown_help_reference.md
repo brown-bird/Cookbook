@@ -1,31 +1,9 @@
-# MacDown
-
-![MacDown logo](http://macdown.uranusjr.com/static/base/img/logo-160.png)
-
-Hello there! I’m **MacDown**, the open source Markdown editor for OS X.
-
-Let me introduce myself.
-
-
-
-## Markdown and I
+## Markdown
 
 **Markdown** is a plain text formatting syntax created by John Gruber, aiming to provide a easy-to-read and feasible markup. The original Markdown syntax specification can be found [here](http://daringfireball.net/projects/markdown/syntax).
 
-**MacDown** is created as a simple-to-use editor for Markdown documents. I render your Markdown contents real-time into HTML, and display them in a preview panel.
-
-![MacDown Screenshot](http://d.pr/i/10UGP+)
-
-I support all the original Markdown syntaxes. But I can do so much more! Various popular but non-standard syntaxes can be turned on/off from the [**Markdown** preference pane](#markdown-pane).
-
-You can specify extra HTML rendering options through the [**Rendering** preference pane](#rendering-pane).
-
-You can customize the editor window to you liking in the [**Editor** preferences pane](#editor-pane):
-
-You can configure various application (that's me!) behaviors in the [**General** preference pane](#general-pane).
 
 ## The Basics
-Before I tell you about all the extra syntaxes and capabilities I have, I'll introduce you to the basics of standard markdown. If you already know markdown, and want to jump straight to learning about the fancier things I can do, I suggest you skip to the [**Markdown** preference pane](#markdown-pane). Lets jump right in.  
 
 ### Line Breaks
 To force a line break, put two spaces and a newline (return) at the end of the line.
@@ -177,15 +155,6 @@ If you type three asterisks `***` or three dashes `---` on a line, I'll display 
 
 ***
 
-
-## <a name="markdown-pane"></a>The Markdown Preference Pane
-This is where I keep all preferences related to how I parse markdown into html.  
-![Markdown preferences pane](http://d.pr/i/RQEi+)
-
-### Document Formatting
-The ***Smartypants*** extension automatically transforms straight quotes (`"` and `'`) in your text into typographer’s quotes (`“`, `”`, `‘`, and `’`) according to the context. Very useful if you’re a typography freak like I am. Quote and Smartypants are syntactically incompatible. If both are enabled, Quote takes precedence.
-
-
 ### Block Formatting
 
 #### Table
@@ -246,19 +215,6 @@ Footnotes           | [\^4] and [\^4]: | [^4] and footnote 4   |
 
 [^4]: You don't have to use a number. Arbitrary things like `[^footy note4]` and `[^footy note4]:` will also work. But they will *render* as numbered footnotes. Also, no need to keep your footnotes in order, I will sort out the order for you so they appear in the same order they were referenced in the text body. You can even keep some footnotes near where you referenced them, and collect others at the bottom of the file in the traditional place for footnotes. 
 
-
-
-
-## <a name="rendering-pane"></a>The Rendering Preference Pane
-This is where I keep preferences relating to how I render and style the parsed markdown in the preview window.  
-![Rendering preferences pane](http://d.pr/i/rT4d+)
-
-### CSS
-You can choose different css files for me to use to render your html. You can even customize or add your own custom css files.
-
-### Syntax Highlighting
-You have already seen how I can syntax highlight your fenced code blocks. See the [Fenced Code Block](#fenced-code-block) section if you haven’t! You can also choose different themes for syntax highlighting.
-
 ### TeX-like Math Syntax
 I can also render TeX-like math syntaxes, if you allow me to.[^math] I can do inline math like this: \\( 1 + 1 \\) or this (in MathML): <math><mn>1</mn><mo>+</mo><mn>1</mn></math>, and block math:
 
@@ -293,50 +249,4 @@ date: 2014-06-06 20:00:00
 ---
 ```
 
-### Render newline literally
-Normally I require you to put two spaces and a newline (aka return) at the end of a line in order to create a line break. If you like, I can render a newline any time you end a line with a newline. However, if you enable this, markdown that looks lovely when I render it might look pretty funky when you let some *other* program render it.
-
-
-
-
-
-## <a name="general-pane"></a>The General Preferences Pane
-
-This is where I keep preferences related to application behavior.  
-![General preferences pane](http://d.pr/i/rvwu+)
-
-The General Preferences Pane allows you to tell me how you want me to behave. For example, do you want me to make sure there is a document open when I launch? You can also tell me if I should constantly update the preview window as you type, or wait for you to hit `command-R` instead. Maybe you prefer your editor window on the right? Or to see the word-count as you type. This is also the place to tell me if you are interested in pre-releases of me, or just want to stick to better-tested official releases.  
-
-## <a name="editor-pane"></a>The Editor Preference Pane
-This is where I keep preferences related to the behavior and styling of the editing window.  
-![Editor preferences pane](http://d.pr/i/6OL5+)
-
-
-### Styling
-
-My editor provides syntax highlighting. You can edit the base font and the coloring/sizing theme. I provided some default themes (courtesy of [Mou](http://mouapp.com)’s creator, Chen Luo) if you don’t know where to start.
-
-You can also edit, or even add new themes if you want to! Just click the ***Reveal*** button, and start moving things around. Remember to use the correct file extension (`.styles`), though. I’m picky about that.
-
-I offer auto-completion and other functions to ease your editing experience. If you don’t like it, however, you can turn them off.
-
-
-
-
-
-## Hack On
-
-That’s about it. Thanks for listening. I’ll be quiet from now on (unless there’s an update about the app—I’ll remind you for that!).
-
-Happy writing!
-
-
-[^emphasize]: If **Underlines** is turned on, `_this notation_` will render as underlined instead of emphasized 
-
-[^under]: If **Underline** is disabled `_this_` will be rendered as *emphasized* instead of being underlined.
-
-[^quote]: **Quote** replaces literal `"` characters with html `<q>` tags. **Quote** and **Smartypants** are syntactically incompatible. If both are enabled, **Quote** takes precedence. Note that **Quote** is different from *blockquote*, which is part of standard Markdown.
-
-[^math]: Internet connection required.
-
-
+[source](http://macdown.uranusjr.com/)
