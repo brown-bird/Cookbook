@@ -4,5 +4,10 @@ http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
 Operations
 ---------------------------------------------------------------------
 * collect
-* reduce
+* reduce 
 * flatMap
+
+
+
+Reduce
+- Produces a scalar result from a stream
