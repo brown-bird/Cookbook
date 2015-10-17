@@ -3,3 +3,6 @@ AngularJs Notes
 $q - A service that helps you run functions asynchronously, and use their return 
 values (or exceptions) when they are done processing.
 
+Links
+- API-Reference https://github.com/kriskowal/q/wiki/API-Reference
+- Examples gallery https://github.com/kriskowal/q/wiki/Examples-Gallery

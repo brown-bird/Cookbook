@@ -95,3 +95,7 @@ This is close coupling and will cause __Fragile Tests__ which need to be updated
 
 ### Solutions
 - Fresh Fixture - Ultimate solution for erratic tests. Opposite of a Fresh Fixture is a Stale Fixture. If shared fixture must be used ensure fixture is immutable. 
+
+
+### Todo:
+1. [ ] Refactor Solution sections to be more descriptive and maybe include examples
