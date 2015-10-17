@@ -10,11 +10,25 @@ Test Smells increase the cost of maintenance on a project and can discourage tes
 
 Unit tests provide the highest level of defect localization or the ability to zoom-in on the problem area in a way that higher level tests don't.
 
+### Tests that are not unit tests
+
+According to Michael Feathers author of ["Working Effectively With Legacy Code"](http://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052)
+
+> A test is not a unit test if:
+>  
+> * It talks to the database
+> * It communicates across the network
+> * It touches the file system
+> * It can't run the same time as any of your other tests
+> * You have to do special things to your environment (such as editing config files) to run it
+
+[more...](http://www.artima.com/weblogs/viewpost.jsp?thread=126923)
+
 ### System (functional, component, integration, etc.) test failing but no unit test failing
 This indicates a ***missing unit test***. 
 
-Unit Tests that are "white box" know the implementation of the behavior they are testing.
-This is close coupling and will cause "fragile tests" which need to be updated frequently. Unit tests should be "Black Box" and know only the contract of the SUT.
+Unit Tests that are __"white box"__ know the implementation of the behavior they are testing.
+This is close coupling and will cause __Fragile Tests__ which need to be updated frequently. Unit tests should be __Black Box__ and know only the contract of the SUT.
 
 ---
 
