@@ -381,6 +381,8 @@ WHERE lastname COLLATE Latin1_General_CS_AS = N'davis';
 
 ~~~
 
+---
+
 #### OPERATORS AND FUNCTIONS (CHARACTER DATA)
 
  FUNCTIONS:
@@ -481,7 +483,11 @@ SELECT empid, lastname,
 FROM HR.Employees;
 ~~~
 
-`REPLICATE` replicates a string a requested number of times. `REPLICATE(string, n)`
+`REPLICATE` replicates a string a requested number of times. 
+
+~~~sql
+REPLICATE(string, n)
+~~~
 
 ~~~sql
 SELECT REPLICATE('abc', 3); -- 'abcabcabc'
@@ -493,7 +499,13 @@ SELECT supplierid,
 FROM Production.Suppliers;
 ~~~
 
-`STUFF` removes a substring from a string and insert a new substring instead. `STUFF(string, pos, delete_length, insertString);` Pass a delete length of 0 to not delete and insert only.
+`STUFF` removes a substring from a string and insert a new substring instead. 
+
+~~~sql
+STUFF(string, pos, delete_length, insertString);
+~~~
+
+Pass a delete length of 0 to not delete and insert only.
 
 ~~~sql
 SELECT STUFF('xyz', 2, 1, 'abc'); -- 'xabcz'

@@ -2,7 +2,7 @@
 
 Test Smells increase the cost of maintenance on a project and can discourage testing. 
 
-### Test Levels
+#### Test Levels
 - System (functional)
 - Component
 - Integration
@@ -10,7 +10,7 @@ Test Smells increase the cost of maintenance on a project and can discourage tes
 
 Unit tests provide the highest level of defect localization or the ability to zoom-in on the problem area in a way that higher level tests don't.
 
-### Tests that are not unit tests
+#### Tests that are not unit tests
 
 According to Michael Feathers author of ["Working Effectively With Legacy Code"](http://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052)
 
@@ -23,16 +23,14 @@ According to Michael Feathers author of ["Working Effectively With Legacy Code"]
 > * You have to do special things to your environment (such as editing config files) to run it
 
 [more...](http://www.artima.com/weblogs/viewpost.jsp?thread=126923)
-
-### System (functional, component, integration, etc.) test failing but no unit test failing
-This indicates a ***missing unit test***. 
+ System (functional, component, integration, etc.) test failing but no unit test failing. This indicates a ***missing unit test***. 
 
 Unit Tests that are __"white box"__ know the implementation of the behavior they are testing.
 This is close coupling and will cause __Fragile Tests__ which need to be updated frequently. Unit tests should be __Black Box__ and know only the contract of the SUT.
 
 ---
 
-### Test Smell Types
+#### Test Smell Types
 - Code Smells - Visible Problems in Test Code
 - Behavior Smells - Tests Behaving Badly
 - Project Smells - Testing-related problems isible to a project Manager
@@ -41,7 +39,7 @@ This is close coupling and will cause __Fragile Tests__ which need to be updated
 
 ---
 
-### Test Smells
+#### Test Smells
 - Tests are hard to understand
 - Tests contain coding errors that may result in
 	- Missed bugs
@@ -63,7 +61,7 @@ This is close coupling and will cause __Fragile Tests__ which need to be updated
 
 ---
 
-### Solutions
+#### Solutions
 - Custom Assertions - Good for Verbose Tests 
 - Replace conditionals with "Guard Assertion"
 - Automated Fixture Teardown	
@@ -76,7 +74,7 @@ This is close coupling and will cause __Fragile Tests__ which need to be updated
 
 ---
 
-### Common Behavior Smells
+#### Common Behavior Smells
 - Slow Tests
 	- Shared Fixtures __(bad)__ 
 - Erratic Tests
@@ -93,9 +91,9 @@ This is close coupling and will cause __Fragile Tests__ which need to be updated
 - Frequent Debugging
 - Manual Intervention
 
-### Solutions
+#### Solutions
 - Fresh Fixture - Ultimate solution for erratic tests. Opposite of a Fresh Fixture is a Stale Fixture. If shared fixture must be used ensure fixture is immutable. 
 
 
-### Todo:
+#### Todo:
 1. [ ] Refactor Solution sections to be more descriptive and maybe include examples
