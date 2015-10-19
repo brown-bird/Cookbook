@@ -169,6 +169,63 @@ personsByAge
 // age 12: [David]	
 ~~~	
 
+Build your own collector using `Collector.of(supplier, accumulator, combiner, finisher)`. 
+Since strings in Java are immutable, we need a helper class like StringJoiner to let the collector construct our string. The supplier initially constructs such a StringJoiner with the appropriate delimiter. The accumulator is used to add each persons upper-cased name to the StringJoiner. The combiner knows how to merge two StringJoiners into one. In the last step the finisher constructs the desired String from the StringJoiner.
+
+~~~java
+Collector<Person, StringJoiner, String> personNameCollector =
+    Collector.of(
+        () -> new StringJoiner(" | "),          // supplier
+        (j, p) -> j.add(p.name.toUpperCase()),  // accumulator
+        (j1, j2) -> j1.merge(j2),               // combiner
+        StringJoiner::toString);                // finisher
+
+String names = persons
+    .stream()
+    .collect(personNameCollector);
+
+System.out.println(names);  // MAX | PETER | PAMELA | DAVID
+~~~
+
+
+#### FlatMap
+
+Map objects from one type to multiple types or no types at all. `flatMap` accepts a function which returns a 
+stream. Each object transformed in flatmap is backed by 
+it's own stream until `flatMap` returns a combined stream. `flatMap` _flattens_ a _map_ where a map can be a
+collection of objects each with their own collection of objects. `flatMap` turns this _map_ of objects into a 
+single stream of objects. 
+
+Example where each _foo_ object contains a collection of _bar_ objects:
+
+~~~java
+List<Foo> foos = new ArrayList<>();
+
+// create foos
+IntStream
+    .range(1, 4)
+    .forEach(i -> foos.add(new Foo("Foo" + i)));
+
+// create bars
+foos.forEach(f ->
+    IntStream
+        .range(1, 4)
+        .forEach(i -> f.bars.add(new Bar("Bar" + i + " <- " + f.name))));
+        
+foos.stream()
+    .flatMap(f -> f.bars.stream())
+    .forEach(b -> System.out.println(b.name));
+
+// Bar1 <- Foo1
+// Bar2 <- Foo1
+// Bar3 <- Foo1
+// Bar1 <- Foo2
+// Bar2 <- Foo2
+// Bar3 <- Foo2
+// Bar1 <- Foo3
+// Bar2 <- Foo3
+// Bar3 <- Foo3
+~~~
 
 #### When to use streams?
 
