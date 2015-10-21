@@ -1,6 +1,9 @@
 # git
 
- Cache login for a bit
+
+#### Cache login
+
+To save login credentials for a specified period of time on your local machine
 
 	git config credential.helper cache
 	
