@@ -13,13 +13,12 @@ public class Predicates
         List<Person> people = new ArrayList();
         createSomePeople(people);
 
-        // try out some predicate stuff
-//        printAllPeople(people);
-//        printOutAdults(people);
-//        predicateFromMethod(people);
-//        combineTwoPredicates(people); // and inline definition of predicates
-//        predicateDefinedAsClass(people);
-        reducebooleanMethods();
+        printAllPeople(people);
+        printOutAdults(people);
+        predicateFromMethod(people);
+        combineTwoPredicates(people); // and inline definition of predicates
+        predicateDefinedAsClass(people);
+        findFirstAndOptionals();
     }
 
     private static void predicateDefinedAsClass(List<Person> people)
@@ -100,7 +99,7 @@ public class Predicates
                                 new Person("Person" + i, i, (i % 2 == 0 ? Gender.MALE : Gender.FEMALE))));
     }
 
-    private static void reducebooleanMethods()
+    private static void findFirstAndOptionals()
     {
         List<Foo> foos = new LinkedList();
 
@@ -111,7 +110,7 @@ public class Predicates
         // Find first foo which is false
         // stream processing stops after first false foo is found!
         Optional<Foo> firstFalseFoo = foos.stream()
-                .peek(f -> System.out.println("peek: " + f)) 
+                .peek(f -> System.out.println("peek: " + f)) // use peek before filter to see which elements are processed
                 .filter(f -> !f.isValid())
                 .findFirst();
 
@@ -125,11 +124,12 @@ public class Predicates
                                 new Foo(true, "foo" + i))); // only true foos are added
 
         // all foos will be processed as none pass filter
+        System.out.println("All foos are valid");
         firstFalseFoo = foos.stream()
                 .peek(f -> System.out.println("peek: " + f))
                 .filter(f -> !f.isValid())
                 .findFirst();
-
+        
         System.out.println(firstFalseFoo.orElse(new Foo(true, "NO FALSE FOOS!")));
         System.out.println();
 

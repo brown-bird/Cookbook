@@ -1,10 +1,6 @@
 
 package predicates;
 
-/**
- *
- * @author richardclay
- */
 public class Foo
 {
     private boolean isValid;
@@ -31,6 +27,4 @@ public class Foo
     {
         return this.name + " " + this.isValid;
     }
-    
-    
 }
