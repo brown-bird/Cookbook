@@ -13,6 +13,8 @@
 7. Develop method using TDD
 8. Remove comment
  
+ ---
+ 
 ### Sprout Class
 **Problem:** Need to insert new code in a location that is difficult to get under test for some given constraint and new code can be encapsulated in a method. Giving up on testing calling code at the moment.
 
@@ -26,6 +28,8 @@
 7. Develop method using TDD
 8. Remove comment
 
+ ---
+ 
 ### Wrap Method
 Useful when a behavior needs to occur around the same time as an existing method invocation (temporal coupling)
 
@@ -47,6 +51,8 @@ Useful when a behavior needs to occur around the same time as an existing method
 1. Can lead to poor names after re-naming operations
 2. New functionality must be able to be executed either before or after existing functionality. It cannot occur during the original functionality.
 
+ ---
+ 
 ### Wrap Class
 ##### Useful when:
 1. The behavior to add is completely independent, and you don't want to pollute the existing class with behavior that is low level or unrelated.
