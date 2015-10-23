@@ -1,5 +1,7 @@
 # Exceptions
 
+Exceptions are a form of logging. They are a way to communicate to the programmer that something un-desirable has occured somewhere. They are not useful to the user. They are useful for edge cases where the code cannot reasonably handle the state that it is in. 
+
 ### Use Cases (item  57)
 
 Use exceptions for exceptional conditions. i.e. don't use exceptions for normal control flow. Use exceptions to communicate problems to developers. i.e. a precondition is violated or an object state is not acceptable. 
