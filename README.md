@@ -11,7 +11,7 @@ Static reference library for personal/professional use. Because __internet__!
 * [DataStructures](https://github.com/rclay83/Reference-Sandbox/blob/master/data_structures/data_structures)
 
 ### Functional Programming / Java 8
-* [Predicates](Reference-Sandbox/Predicates/Predicates.md)
+* [Predicates](https://github.com/rclay83/Reference-Sandbox/blob/master/Predicates/Predicates.md#predicates-in-java-8)
 * [Java 8 Streams](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#java-8-streams)
     * [Creation](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#stream-creation) 
     * [Operations](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#operations) This includes `filter`, `map`, `anyMatch`, `collect`, and `flatMap`
@@ -35,7 +35,7 @@ linux
 ### Testing
 * [smells](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#test-smells)
 * [Tests that are not unit tests](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#tests-that-are-not-unit-tests)
-* [legacy code](
+* [legacy code](https://github.com/rclay83/Reference-Sandbox/blob/master/Testing/Legacy/not_enough_time.md#legacy-code-not-enough-time)
 
 ### Patterns
 Notes
