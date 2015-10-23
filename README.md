@@ -35,7 +35,7 @@ linux
 ### Testing
 * [smells](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#test-smells)
 * [Tests that are not unit tests](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#tests-that-are-not-unit-tests)
-* [legacy code](
+* [legacy code](https://github.com/rclay83/Reference-Sandbox/blob/master/Testing/Legacy/not_enough_time.md#legacy-code-not-enough-time)
 
 ### Patterns
 Notes
