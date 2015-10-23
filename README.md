@@ -3,7 +3,6 @@
 Static reference library for personal/professional use. Because __internet__!
 
 ## Table of Contents
----
 
 ### General
 * [Documentation](Reference-Sandbox/Documentation.md)
@@ -25,10 +24,10 @@ Static reference library for personal/professional use. Because __internet__!
 * [Exceptions](Reference-Sandbox/Exceptions.md)
 
 ### Commands
-#### git
+git
 * [cache login](https://github.com/rclay83/Reference-Sandbox/blob/master/git.md#cache-login) 
 
-#### linux
+linux
 * [searching for files](https://github.com/rclay83/Reference-Sandbox/blob/master/command_line/Searching%20for%20Files.md#searching-for-files)
     * [locate](https://github.com/rclay83/Reference-Sandbox/blob/master/command_line/Searching%20for%20Files.md#locate)
     * [find](https://github.com/rclay83/Reference-Sandbox/blob/master/command_line/Searching%20for%20Files.md#find)
@@ -36,10 +35,11 @@ Static reference library for personal/professional use. Because __internet__!
 ### Testing
 * [smells](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#test-smells)
 * [Tests that are not unit tests](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#tests-that-are-not-unit-tests)
+* [legacy code](
 
 ### Patterns
-#### Notes
+Notes
 * [Singletons](Reference-Sandbox/design_patterns/singleton/Singletons.md)
  
-#### Examples
+Examples
 * [Builder](Reference-Sandbox/Patterns/src/builder/NutritionFacts.java) _NutritionFacts_ version
