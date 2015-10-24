@@ -1,6 +1,6 @@
 # Readable Code
 
-Reduce the *"time it takes to understanding"* in your code by making it more readable. 
+Reduce the *"time it takes to understanding"* in your code by making it more readable. Smaller *(read less)* code is not always better than more expressive code. Simple code is best!
 
 ## Conditionals
 
