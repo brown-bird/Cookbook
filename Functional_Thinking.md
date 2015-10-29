@@ -2,7 +2,7 @@
 
 
 ## Why
-Functional programming follows the pattern of **ceding** more control to the runtime. e.g. *garbage collection*. Low level operations like iterating over a collection of objects, filtering by some rules, and transforming objects from one type to another are performed via built-in language implementations. The amount of state manipulation is greatly reduced an along with it many of the errors that come with rolling your own *state*. 
+Functional programming follows the pattern of **ceding** more control to the runtime. e.g. *garbage collection*. Low level operations and *state management operations* like iterating over a collection of objects, filtering by some rules, and transforming objects from one type to another are performed via built-in language implementations. The amount of state manipulation is greatly reduced an along with it many of the errors that come with rolling your own *state*. 
 
 >OO makes code understandable by encapsulating moving parts. FP makes code understandable by minimizing moving parts. 
 >- *Micaheal Feathers*
