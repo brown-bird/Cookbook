@@ -17,6 +17,12 @@ The resulting code from functional programming is often more concise and more si
 
 **Pure Functions** are functions which have no side effects - meaning they do not modify any outside state or the state of parameters. There are no reasons to *hide* pure functions as there is no state to protect. 
 
+Another definition: A *pure* function is one that has no side  effects:
+
+* It references no other mutable class fields
+* It doesn't set any values other than the return value
+* It relies only on the parameters for input
+
 A **Closure** is a function that carries an implicit binding to all the variables referenced within it. In other words, the function (or method) encloses a context around the things it references. 
 
 ~~~groovy
@@ -54,3 +60,15 @@ Imperative languages use *state* to model programming, exemplefied by parameter 
 **Partial Application** descrives the conversion of a multiargument function into one that accepts fewer arguments, with values for the elided arguments supplied in advance. It applies some arguments to a function, returning a function with a signature that consists of the remaining arguments.
 
 In *Scala* Partially Applied functions and Partial Functions are not the same thing. *Partial Functions* are functions with constrained parameter lists. 
+
+**Memoization** is a feature built into a programming language that enables automatic caching of recurring function-return values. Memoizing a function is a *metafunction* application: doing something to the function itself rather than the function results. Currying is another example of a metafunction technique.
+
+Memoization can run into the same issues that recursion does with memory limitations. However, many languages which support memoization also provide additional customization methods, such as `memoizeAtMost()` which allow tweaking of the behavior in order to avoid physical limitations.
+
+From the section comparing manually caching vs. language implemented memoization:
+
+> In the imperative version, the developer owns the code (and responsibility). Functional languages build generic machinery -- sometimes with customization knobs (in the form of alternate functions or parameters) -- that you can apply to standard constructs.
+
+>Language designers will always buid more efficient mechanisms because they are allowed to bend rules.
+
+Make sure all memoized or cached functions are *pure* functions.

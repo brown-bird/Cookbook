@@ -54,3 +54,5 @@ Examples
 * [Learn you Haskell for Great Good](http://learnyouahaskell.com/chapters)
 * [Why's (Poignant) guide to Ruby](http://poignant.guide/book/) - funny cartoon book about foxes and ruby and a built in shell!
 * [Eloquent JavaScript](http://eloquentjavascript.net/)
+* [Maven by Example](http://books.sonatype.com/mvnex-book/reference/public-book.html)
+* [Maven The complete Reference](http://books.sonatype.com/mvnref-book/reference/public-book.html)
