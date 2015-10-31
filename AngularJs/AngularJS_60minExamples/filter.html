@@ -1,0 +1,16 @@
+<html ng-app>
+	<head>
+		<script src="angular.min.js"></script>
+	</head>
+	<body ng-init="customers = [{name:'John Doe', city: 'New York'}, {name: 'Billy Bob', city: 'Phoenix'}, {name: 'Jill Doe', city: 'Phoenix'}, {name: 'Barbara', city: 'New York'}]">
+		
+		<div>
+			<label>Name:</label>
+			<input type="text" ng-model="name" placeholder="Enter a name here"</input></input>
+			<hr>
+			<ul>
+				<li data-ng-repeat="cust in customers | filter:name"> {{cust.name | uppercase}} - {{cust.city | lowercase}}</li>
+			</ul>
+		</div>
+	</body>
+</html>
