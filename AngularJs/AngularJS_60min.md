@@ -72,3 +72,37 @@ demoApp.controller('SimpleController', function ($scope) {
         {name: 'James Brown', city: 'Atlanta'}
     ];
 });
+~~~
+
+#### Configuring Routes
+
+Define and configure routes like so: 
+
+~~~js
+var demoApp = angular.module('demoApp', []);
+
+demoApp.config(function ($routeProvider) {
+    $routeProvider
+        .when('/',
+            {
+                controller: 'SimpleController', // use this controller with this view
+                templateUrl: 'Partials/View1.html'
+            })
+        .when('/view2',
+            {
+                controller: 'SimpleController',
+                templateUrl: 'Partials/View2.html'
+            })
+        .otherwise({ redirectTo: '/' });
+});
+
+demoApp.controller(SimpleController); // assumes the function SimpleController is previously defined
+~~~
+
+To define the placehoder for your SPA Views use the pattern:
+
+    <div ng-view></div>
+    
+or
+
+    <ng-view></ng-view>
