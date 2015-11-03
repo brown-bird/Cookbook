@@ -1,6 +1,6 @@
-# Reference-Sandbox
+# Recipes
 
-Reference library for personal use. Because __internet__!
+My collection of programming notes, links, thoughts, and recipes. 
 
 ## Table of Contents
 
