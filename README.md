@@ -1,14 +1,14 @@
-# Reference-Sandbox
+# Recipes
 
-Reference library for personal use. Because __internet__!
+My collection of programming notes, links, thoughts, and recipes. 
 
 ## Table of Contents
 
 #### General
-* [Documentation](https://github.com/rclay83/Reference-Sandbox/blob/master/Documentation.md#documentation)
-* [Principles](https://github.com/rclay83/Reference-Sandbox/blob/master/Principles/Principles.md#principles) - My ramblings
-* [markdown syntax](https://github.com/rclay83/Reference-Sandbox/blob/master/markdown/MacDown_help_reference.md)
-* [DataStructures](https://github.com/rclay83/Reference-Sandbox/blob/master/data_structures/data_structures)
+* [Documentation](https://github.com/rclay83/Reference-Sandbox/blob/master/Documentation.md#documentation) - The *art* of knowing what the heck is going on!
+* [Principles](https://github.com/rclay83/Reference-Sandbox/blob/master/Principles/Principles.md#principles) - My ramblings (or things I am likely to change my mind about and regret saying in the first place...)
+* [markdown syntax](https://github.com/rclay83/Reference-Sandbox/blob/master/markdown/MacDown_help_reference.md) - Coolest thing ever.
+* [DataStructures](https://github.com/rclay83/Reference-Sandbox/blob/master/data_structures/data_structures) - The pots and pans of the kitchen.
 
 #### Functional Programming / Java 8
 * [Predicates](https://github.com/rclay83/Reference-Sandbox/blob/master/Predicates/Predicates.md#predicates-in-java-8)
