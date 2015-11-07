@@ -11,6 +11,10 @@ My collection of programming notes, links, thoughts, and recipes.
 * [DataStructures](https://github.com/rclay83/Reference-Sandbox/blob/master/data_structures/data_structures) - The pots and pans of the kitchen.
 * [Productivity](https://github.com/rclay83/Cookbook/blob/master/Productivity/productivity.md#productivity)
 
+#### Dictionaries
+* [General](https://github.com/rclay83/Cookbook/blob/master/dictionaries/general.md)
+* [Unit Testing](https://github.com/rclay83/Cookbook/blob/master/dictionaries/unit_testing/general_glossary.md#glossary)
+
 #### Functional Programming / Java 8
 * [Predicates](https://github.com/rclay83/Reference-Sandbox/blob/master/Predicates/Predicates.md#predicates-in-java-8)
 * [Java 8 Streams](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#java-8-streams)
@@ -23,12 +27,11 @@ My collection of programming notes, links, thoughts, and recipes.
  
 #### Code Quality
 * [Exceptions](https://github.com/rclay83/Reference-Sandbox/blob/master/Exceptions.md#exceptions)
+* [Readable Code](https://github.com/rclay83/Cookbook/blob/master/smells/Readable_Code.md#readable-code)
+* [Smells](https://github.com/rclay83/Cookbook/blob/master/smells/smells_refactoring_fowler.md#code-smells) - From Martin Fowler's *Refactoring*
 
 #### Commands
-
-git
-
-* [cache login](https://github.com/rclay83/Reference-Sandbox/blob/master/git.md#cache-login) 
+* [git](https://github.com/rclay83/Reference-Sandbox/blob/master/git.md#cache-login) 
 
 linux
 
