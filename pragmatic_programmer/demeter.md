@@ -33,6 +33,8 @@ public void plotDate(Date aDate, TimeZone aTimeZone)
 }
 ~~~
 
+The law demeter differs from *method chaining* in that *method chaining* involves chaining method calls on the **same object** where as violation of the law of demeter involves executing method calls on objects returned from objects ... returned from objects ad infinitum.
+
 **Benefits:** Your code is more adaptable and robust.
 
 **Tradeoffs:** You end up creating a lot of *wrapper* methods which just delegate behavior to other classes<sup>2</sup>. This can impact performance and space complexity. 
