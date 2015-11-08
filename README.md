@@ -9,6 +9,11 @@ My collection of programming notes, links, thoughts, and recipes.
 * [Principles](https://github.com/rclay83/Reference-Sandbox/blob/master/Principles/Principles.md#principles) - My ramblings (or things I am likely to change my mind about and regret saying in the first place...)
 * [markdown syntax](https://github.com/rclay83/Reference-Sandbox/blob/master/markdown/MacDown_help_reference.md) - Coolest thing ever.
 * [DataStructures](https://github.com/rclay83/Reference-Sandbox/blob/master/data_structures/data_structures) - The pots and pans of the kitchen.
+* [Productivity](https://github.com/rclay83/Cookbook/blob/master/Productivity/productivity.md#productivity)
+
+#### Dictionaries
+* [General](https://github.com/rclay83/Cookbook/blob/master/dictionaries/general.md)
+* [Unit Testing](https://github.com/rclay83/Cookbook/blob/master/dictionaries/unit_testing/general_glossary.md#glossary)
 
 #### Functional Programming / Java 8
 * [Predicates](https://github.com/rclay83/Reference-Sandbox/blob/master/Predicates/Predicates.md#predicates-in-java-8)
@@ -22,12 +27,11 @@ My collection of programming notes, links, thoughts, and recipes.
  
 #### Code Quality
 * [Exceptions](https://github.com/rclay83/Reference-Sandbox/blob/master/Exceptions.md#exceptions)
+* [Readable Code](https://github.com/rclay83/Cookbook/blob/master/smells/Readable_Code.md#readable-code)
+* [Smells](https://github.com/rclay83/Cookbook/blob/master/smells/smells_refactoring_fowler.md#code-smells) - From Martin Fowler's *Refactoring*
 
 #### Commands
-
-git
-
-* [cache login](https://github.com/rclay83/Reference-Sandbox/blob/master/git.md#cache-login) 
+* [git](https://github.com/rclay83/Reference-Sandbox/blob/master/git.md#cache-login) 
 
 linux
 
@@ -41,11 +45,9 @@ linux
 * [legacy code](https://github.com/rclay83/Reference-Sandbox/blob/master/Testing/Legacy/not_enough_time.md#legacy-code-not-enough-time)
 
 #### Patterns
-Notes
+
 * [Singletons](https://github.com/rclay83/Reference-Sandbox/blob/master/design_patterns/singleton/Singletons.md#singletons)
- 
-Examples
-* [Builder](https://github.com/rclay83/Reference-Sandbox/blob/master/Patterns/src/builder/NutritionFacts.java) _NutritionFacts_ version
+* [Builder](https://github.com/rclay83/Reference-Sandbox/blob/master/Patterns/src/builder/NutritionFacts.java) - *Example*: NutritionFacts version
 
 #### Online Books
 
