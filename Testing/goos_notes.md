@@ -16,4 +16,4 @@ TDD gives feedback on the quality of both it's *implementation* ("does it work?"
 
 >Never write new functionality without a failing test
 
-**Acceptane Test** - Starts out as a failing test that defines the new feature to be implemented. Mimmics how the feature will be used. 
+**Acceptance Test** - Exercises the functionality you want to build. Should be a *failing* test to begind with. When possible an acceptance test should exercise the system end-to-end without directly calling its internal code. 

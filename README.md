@@ -10,6 +10,7 @@ My collection of programming notes, links, thoughts, and recipes.
 * [markdown syntax](https://github.com/rclay83/Reference-Sandbox/blob/master/markdown/MacDown_help_reference.md) - Coolest thing ever.
 * [DataStructures](https://github.com/rclay83/Reference-Sandbox/blob/master/data_structures/data_structures) - The pots and pans of the kitchen.
 * [Productivity](https://github.com/rclay83/Cookbook/blob/master/Productivity/productivity.md#productivity)
+* [Process](https://github.com/rclay83/Cookbook/blob/master/Principles/process.md#the-process)
 
 #### Dictionaries
 * [General](https://github.com/rclay83/Cookbook/blob/master/dictionaries/general.md)
@@ -29,6 +30,7 @@ My collection of programming notes, links, thoughts, and recipes.
 * [Exceptions](https://github.com/rclay83/Reference-Sandbox/blob/master/Exceptions.md#exceptions)
 * [Readable Code](https://github.com/rclay83/Cookbook/blob/master/smells/Readable_Code.md#readable-code)
 * [Smells](https://github.com/rclay83/Cookbook/blob/master/smells/smells_refactoring_fowler.md#code-smells) - From Martin Fowler's *Refactoring*
+* [Law of Demeter](https://github.com/rclay83/Cookbook/blob/b0a5b232544c95d63c0a0ea707399381af205b31/pragmatic_programmer/demeter.md#pragmatic-programmer-notes)
 
 #### Commands
 * [git](https://github.com/rclay83/Reference-Sandbox/blob/master/git.md#cache-login) 
@@ -43,6 +45,7 @@ linux
 * [smells](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#test-smells)
 * [Tests that are not unit tests](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#tests-that-are-not-unit-tests)
 * [legacy code](https://github.com/rclay83/Reference-Sandbox/blob/master/Testing/Legacy/not_enough_time.md#legacy-code-not-enough-time)
+* [GOOS](https://github.com/rclay83/Cookbook/blob/50f467b928c6b6d4941503e51bed132391697952/Testing/goos_notes.md#goos-notes)
 
 #### Patterns
 
