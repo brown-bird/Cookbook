@@ -156,7 +156,98 @@ change the renderer, the table will change its presentation, now displaying
 the HSB (Hue, Saturation, Brightness) values.
 
 
+#### Composite Simpler Than the Sum of Its Parts
+
+The API of a composite object should not be more complicated than that of any of its components. The "Tell, Don't ASk" convention can help to guard against useless objects (or objects which do no real work) but rather serve only as accessors to their subcomponents. 
+
+Bad:
+
+~~~java
+moneyEditor.getAmountField().setText(String.valueOf(money.amount()));
+moneyEditor.getCurrencyField().setText(money.currencyCode());
+~~~
+
+Instead of exposing sub-components you could write:
+
+~~~java
+moneyEditor.setValue(money);
+~~~
+
+Composite objects can, of course, be used as components in larger-scale, more
+sophisticated composite objects. As we grow the code, the “composite simpler
+than the sum of its parts” rule contributes to raising the level of abstraction.
 
 
+#### Context Independence
 
+While the “composite simpler than the sum of its parts” rule helps us decide
+whether an object hides **enough** information, the “context independence” rule
+helps us decide whether an object hides too much or hides the wrong information.
+
+
+A system is easier to change if its objects are context-independent; that is, if
+each object has no built-in knowledge about the system in which it executes. This
+allows us to take units of behavior (objects) and apply them in new situations.
+To be context-independent, whatever an object needs to know about the larger
+environment it’s running in must be passed in. Those relationships might be
+“permanent” (passed in on construction) or “transient” (passed in to the method
+that needs them).
+
+In this “paternalistic” approach, each object is told just enough to do its job
+and wrapped up in an abstraction that matches its vocabulary. Eventually, the
+chain of objects reaches a process boundary, which is where the system will find
+external details such as host names, ports, and user interface events.
+
+
+### Achieving Object-Oriented Design
+
+TDD with mock objects also encourages information hiding. We should mock
+an object’s peers—its dependencies, notifications, and adjustments we categorized
+on page 52—but not its internals. Tests that highlight an object’s neighbors help
+us to see whether they are peers, or should instead be internal to the target object.
+
+A test that is clumsy or unclear might be a hint that we’ve exposed too much
+implementation, and that we should rebalance the responsibilities between the
+object and its neighbors.
+
+#### Value Types
+
+*Values* are immutable, so they're simpler and have no meaninful identity; *objects* have state, so they have identity and relationships with each other.
+
+The more code we write, the more we’re convinced that we should define
+types to represent value concepts in the domain, even if they don’t do much. It
+helps to create a consistent domain model that is more self-explanatory.
+
+Three basic techniques for introducing value types:
+
+* **Breaking out** - When we find that the code in an object is becoming complex, that’s often
+a sign that it’s implementing multiple concerns and that we can break out
+coherent units of behavior into helper types.
+
+* **Budding off** - When we want to mark a new domain concept in the code, we often introduce
+a placeholder type that wraps a single field, or maybe has no fields at all. As
+the code grows, we fill in more detail in the new type by adding fields and
+methods. With each type that we add, we’re raising the level of abstraction
+of the code.
+
+* **Bundling up** - When we notice that a group of values are always used together, we take
+that as a suggestion that there’s a missing construct. A first step might be to
+create a new type with fixed public fields—just giving the group a name
+highlights the missing concept. Later we can migrate behavior to the new type, which might eventually allow us to hide its fields behind a clean interface, satisfying the “composite simpler than the sum of its parts” rule.
+
+**We find that the discovery of value types is usually motivated by trying to
+follow our design principles, rather than by responding to code stresses when
+writing tests.**
+
+The categories for discovering object types are similar (which is why we shoehorned
+them into these names), *except that the design guidance we get from
+writing unit tests tends to be more important. As we wrote in “External and
+Internal Quality” (page 10), **we use the effort of unit testing to maintain the
+code’s internal quality.** There are more examples of the influence of testing on
+design in Chapter 20.*
+
+>**The Tests Say...**
+>
+>Break up an object if it becomes too large to test easily, or if its test failures become
+difficult to interpret. Then unit-test the new parts separately.
 

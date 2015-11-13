@@ -31,6 +31,7 @@ My collection of programming notes, links, thoughts, and recipes.
 * [Readable Code](https://github.com/rclay83/Cookbook/blob/master/smells/Readable_Code.md#readable-code)
 * [Smells](https://github.com/rclay83/Cookbook/blob/master/smells/smells_refactoring_fowler.md#code-smells) - From Martin Fowler's *Refactoring*
 * [Law of Demeter](https://github.com/rclay83/Cookbook/blob/b0a5b232544c95d63c0a0ea707399381af205b31/pragmatic_programmer/demeter.md#pragmatic-programmer-notes)
+* [Object Oriented Design](https://github.com/rclay83/Cookbook/blob/master/Testing/goos_notes.md#object---oriented-style) - *GOOS notes*
 
 #### Commands
 * [git](https://github.com/rclay83/Reference-Sandbox/blob/master/git.md#cache-login) 
