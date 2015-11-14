@@ -26,7 +26,7 @@ TDD gives feedback on the quality of both it's *implementation* ("does it work?"
 
 The test name should provide *context* about what condition the test is exercising. The test method name and code needs to describe the scenario being tested. Try focusing on the *feature* that is being implemented not the method itself that is the door to the feature. The goal is to ensure that the test is **readable** and **maintainable**.
 
-#### Object - Oriented style
+## Object - Oriented style
 
 Value code that is easy to maintain over code that is easy to write. Implementing a feature in the most direct way can damage the maintainability of the system, for example by making the code difficult to understand or by introducing hidden dependencies between components. Not balancing immediate and long-term concerns can result in brittle systems and fragile projects that can no longer be delivered.
 
@@ -34,9 +34,13 @@ Value code that is easy to maintain over code that is easy to write. Implementin
 
 **Higher levels of abstraction** - Avoid excessive complexity by working at higher levels of abstraction. Combine components of useful functionality rather than manipulating variables and control flow. *Order food from a menu rather than describe the detailed recipe to create it.*
 
-#### Note about testing through public api's vs testing private methods
+---
+
+*Note about testing through public api's vs testing private methods*
 
 If you test through the api for which you plan to consume a feature you decouple your tests from the implementation details of what is being done. This allows you to refactor implementation details without refactoring tests that consume only the public api. Testing the smaller private methods may give the illusion of code that is easier to write *(i.e. fewer tests)*
+
+---
 
 #### Encapsulation
 
@@ -218,6 +222,9 @@ The more code we write, the more we’re convinced that we should define
 types to represent value concepts in the domain, even if they don’t do much. It
 helps to create a consistent domain model that is more self-explanatory.
 
+
+#### Creating Objects
+
 Three basic techniques for introducing value types:
 
 * **Breaking out** - When we find that the code in an object is becoming complex, that’s often
@@ -250,4 +257,158 @@ design in Chapter 20.*
 >
 >Break up an object if it becomes too large to test easily, or if its test failures become
 difficult to interpret. Then unit-test the new parts separately.
+
+#### Budding Off: Defining a New Service That an Object Needs and Adding a New Object to Provvide It
+
+
+Our response is to create an interface to define the service that the object needs
+from the object’s point of view. We write tests for the new behavior as if the
+**service already exists**, using mock objects to help describe the relationship between
+the target object and its new collaborator; this is how we introduced the
+AuctionEventListener we mentioned in the previous section.
+
+The development cycle goes like this. When implementing an object, we discover
+that it needs a service to be provided by another object. We give the new service
+a name and mock it out in the client object’s unit tests, to clarify the relationship
+between the two. Then we write an object to provide that service and, in doing
+so, discover what services that object needs. We follow this chain (or perhaps a
+directed graph) of collaborator relationships until we connect up to existing objects,
+either our own or from a third-party API. This is how we implement
+“Develop from the Inputs to the Outputs”
+
+
+---
+
+**Problem:** *You are working with or are creating a concrete class with the prefix "IMPL"*
+
+**Solution:** Name the concrete class with what is unique about it's implementation.
+
+
+
+**Discussion:** *Identify Relationships with Interfaces*
+
+This approach reflects an emphasis on the relationships between objects, as defined by their communication protocols. Interfaces can be used to name the roles that objects can play and to describe the messages they'll accept.
+
+We also prefer interfaces to be as narrow as possible, even though that means
+we need more of them. The fewer methods there are on an interface, the more
+obvious is its role in the calling object. We don’t have to worry which other
+methods are relevant to a particular call and which were included for convenience.
+Narrow interfaces are also easier to write adapters and decorators for; there’s
+less to implement, so it’s easier to write objects that compose together well.
+
+“Pulling” interfaces into existence, as we described in “Budding Off,” helps
+us keep them as narrow as possible. Driving an interface from its client avoids
+leaking excess information about its implementers, which minimizes any implicit
+coupling between objects and so keeps the code malleable.
+
+> **Impl Classes Are Meaningless**
+Sometimes we see code with classes named by adding “Impl” to the single interface
+they implement. This is better than leaving the class name unchanged and
+prefixing an “I” to the interface, but not by much. **A name like BookingImpl is duplication;
+it says exactly the same as implements Booking, which is a “code smell.”**
+We would not be happy with such obvious duplication elsewhere in our code,
+so we ought to refactor it away.
+
+>It might just be a naming problem. There’s always something specific about an
+implementation that can be included in the class name: it might use a bounded
+collection, communicate over HTTP, use a database for persistence, and so on.
+A bridging class is even easier to name, since it will belong in one domain but
+implement interfaces in another.
+
+>If there really isn’t a good implementation name, it might mean that the interface
+is poorly named or designed. Perhaps it’s unfocused because it has too many responsibilities;
+or it’s named after its implementation rather than its role in the client;
+or it’s a value, not an object—this discrepancy sometimes turns up when writing
+unit tests, see “Don’t Mock Values” (page 237).
+
+
+---
+**Problem:** *There really isn't a good name for a concrete class.*
+
+**Solution:** The interface may be poorly named or designed. Refactor the interface to have fewer responsibilities if it has too many. Rename if the interface is named after it's implementation instead of it's role. 
+
+---
+
+
+**Problem:** *Some Interfaces in the code base look similar*
+
+**Solution:** Examine if the the similar interfaces really represent a single concept and should be merged. 
+
+**Discussion:** Extracting common roles makes the design more malleable because more components will be "plug-compatible", so we can work at a higher level of abstraction. A secondary advantage is that there will be fewer concepts that cost time to understand.
+
+Alternatively, if similar interfaces turn out to represent different concepts, we
+can make a point of making them distinct, so that the compiler can ensure that
+we only combine objects correctly. A decision to separate similar-looking interfaces
+is a good time to reconsider their naming. It’s likely that there’s a more
+appropriate name for at least one of them.
+
+---
+
+**Problem:** *When implementing an interface, the structure of the concrete class is unclear.*
+
+**Solution:** If the concrete class has too many responsibilities consider refactoring the interface to be better focused. Maybe it should be split up. 
+
+---
+
+
+**Problem:** Assembling, or creating, an object graph doesn't explain the expectation of a test or express intent clearly. 
+
+**Solution:** Organize the code into two layers. 
+
+* Implementation layer - The graph of objects. it's behavior is the combined result of how its objects respond to events. 
+* Declarative layer - Builds up the objects in the implementation layer, using small "sugar" methods and syntax to describe the **purpose** of each fragment. 
+
+**Discussion:** The declarative layer describes what the code will
+do, while the implementation layer describes how the code does it. The declarative
+layer is, in effect, a small embedded domain-specific language.
+
+
+The different purposes of the two layers mean that we use a different coding
+style for each. For the implementation layer we stick to the conventional objectoriented
+style guidelines we described in the previous chapter. We’re more flexible
+for the declarative layer—we might even use “train wreck” chaining of method
+calls or static methods to help get the point across.
+
+Example creating an Expectations object in jMock. 
+
+Before:
+
+~~~java
+InvocationExpectation expectation = new InvocationExpectation();
+expectation.setParametersMatcher(
+new AllParametersMatcher(Arrays.asList(new IsInstanceOf(String.class)));
+expectation.setCardinality(new Cardinality(1, 1));
+expectation.setMethodMatcher(new MethodNameMatcher("doSomething"));
+expectation.setObjectMatcher(new IsSame<Example>(example));
+context.addExpectation(expectation);
+~~~
+
+After, using a *declarative* layer:
+
+~~~java
+context.checking(new Expectations() {{
+oneOf(example).doSomething(with(any(String.class)));
+}});
+~~~
+
+--- 
+
+
+#### About Classes
+
+One last point. Unusually for a book on object-oriented software, we haven’t
+said much about classes and inheritance. It should be obvious by now that we’ve
+been pushing the application domain into the gaps between the objects, the
+communication protocols. We emphasize interfaces more than classes because
+that’s what other objects see: an object’s type is defined by the roles it plays.
+
+We view classes for objects as an “implementation detail”—a way of implementing
+types, not the types themselves. We discover object class hierarchies by
+factoring out common behavior, but prefer to refactor to delegation if possible
+since we find that it makes our code more flexible and easier to understand.5
+Value types, on the other hand, are less likely to use delegation since they don’t
+have peers.
+
+
+
 
