@@ -409,6 +409,58 @@ since we find that it makes our code more flexible and easier to understand.5
 Value types, on the other hand, are less likely to use delegation since they don’t
 have peers.
 
+---
+
+#### Only Mock Types That You Own
+
+**Problem:** You want to mock a type provided by a 3rd party library.
+
+**Solution:** Don't! Use the real library in testing. Use an *Adapter* layer to connect the services we have defined as needed in our domain to the library that implements them. Test these in integration tests. 
+
+
+**Discussion:** Although we know how we want our abstraction
+to behave, we don’t know if it really does so until we test it in combination with
+the third-party code.
+
+We write a layer of adapter objects (as described in [Gamma94]) that uses the
+third-party API to implement these interfaces, as in Figure 8.1. We keep this
+layer as thin as possible, to minimize the amount of potentially brittle and hardto-
+test code. We test these adapters with focused integration tests to confirm our
+understanding of how the third-party API works. There will be relatively few
+integration tests compared to the number of unit tests, so they should not get in
+the way of the build even if they’re not as fast as the in-memory unit tests.
+
+We also prefer not to change third-party code, even when we have the sources.
+It’s usually too much trouble to apply private patches every time there’s a new
+version.
+
+
+A second risk is that we have to be sure that the behavior we stub or mock
+**matches what the external library will actually do**. How difficult this is depends
+on the quality of the library—whether it’s specified (and implemented) well
+enough for us to be certain that our unit tests are valid. Even if we get it right
+once, we have to make sure that the tests remain valid when we upgrade the
+libraries. 
+
+This precaution can include other teams code, which you do not control. If a bug is introduced through a code change, the unit test will not catch the **real** behavior that will crash in production. *Is it better to test only your code and let another team's bug enter production, via mocking the expected behavior of their code, or to test thier actual code and discover the bug earlier?* 
+
+*There are some exceptions to this rule. e.g. call sequences, generating exceptions, etc. See text for more info*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
