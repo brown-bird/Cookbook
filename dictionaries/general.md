@@ -5,3 +5,5 @@
 **Idempotence** - A property of an operation, that it returns the same result through multiple applications. A function which given the same input in multiple invocations returns the same result. 
 
 **Imperative** - Having a semantics that incorporates mutable variables.
+
+**Declarative** - Stating what needs to happen instead of how it is implemented. *Tell, don't ask*

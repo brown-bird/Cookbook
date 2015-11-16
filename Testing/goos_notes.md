@@ -17,3 +17,13 @@ TDD gives feedback on the quality of both it's *implementation* ("does it work?"
 >Never write new functionality without a failing test
 
 **Acceptance Test** - Exercises the functionality you want to build. Should be a *failing* test to begind with. When possible an acceptance test should exercise the system end-to-end without directly calling its internal code. 
+
+---
+
+#### Tell, Don't Ask
+
+This is about followint the *Law of Demeter*. Objects should make decisions based only on the information they hold internally or that which came with the trigerring message. They should avoid navigating to other objects to make things happen. Followed consistently, this style produces more flexible *(modular)* code becuase it's easy to swap objects that play the same role. 
+
+As well has hiding information *(implementation details)*, if forces explicit descriptions *(names)* for the interactions between objects rather than leaving them implicit in the chain of getters. **We should ask the question we really want answered, instead of asking for the information to help us figure out the answer ourselves.**
+
+---
