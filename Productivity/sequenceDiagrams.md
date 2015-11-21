@@ -11,7 +11,8 @@ Sequence Diagrams contain the following components:
 
 #### Participants
 
-Participants can be objects or any other part of a program.
+Participants can be objects or any other part of a program. Interactions between participants are 
+denoted with lines drawn between the lifelines.
 Participants can be listed across the top of the diagram or as they are created.
 
 Participant format:
@@ -29,4 +30,13 @@ Participant format:
 	
 	//example
 	validCard=atmCardInserted(card:ATMCard):Boolean
-	
+
+Synchronous messages use a filled in arrow head. Asynchronous messages use an open arrow head.
+
+#### Sequence Fragments
+
+Sequence Fragments are sometimes used to identify optional bits of logic. They can utilize a
+guard condtion like so: `[bacon.isChunky() && myStomach.isEmpty()]` 
+
+
+
