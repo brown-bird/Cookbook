@@ -43,5 +43,20 @@ You can use the `-n` option for `head` to specify a custom number of output line
 
 **Problem:** You want to save the output of an operation or update to a file. 
 
-**Solution:**
+**Solution:** Use `tee` command to read from standard input and write to standard output and files. e.g. `npm install -g bower tee ~/Desktop/output.txt`
 
+**Discussion:** You can also redirect the output to less to view the output as if it were a file. `npm install -g bower | less`
+
+## Navigation
+
+### Command Line
+
+`ctrl + a` - move cursor to beginning of the line
+
+`ctrl + e` - move cursor to end of the line
+
+### less
+
+`f` - scroll forward one page
+
+`b` - scroll backwards one page
