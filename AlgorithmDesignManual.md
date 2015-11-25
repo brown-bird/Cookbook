@@ -52,3 +52,24 @@ Techniques for finding counter-examples:
 > Mathematical induction is usually the right way to verfy the correctness of a recursive or incremental insertion algorithm.
 
 Mathematical induction is a common use case for proving the correctness of summation formulae. 
+
+#### Modeling the Problem
+
+Modeling is the art of formulating your application in terms of precisely described, well-understood problems. Most algorithms, however, are designed to work on rigorously defined abstract structures such as permutations, graphs, and sets. To exploit the algorithms literature, you must learn to describe your problem **abstractly**, in terms of *procedures on fundamental structures*.
+
+#### Combinatorial Objects
+
+**Permutations** - which are arrangements, or orderings, of items.
+Permutations are likely the object in question whenever your problem seeks an “arrangement,” “tour,” “ordering,” or “sequence.”
+
+**Subsets** - which represent selections from a set of items.Subsets are likely the object in question whenever your problem seeks a “cluster,” “collection,” “committee,” “group,” “packaging,” or “selection.”
+
+**Trees** – which represent hierarchical relationships between items. Trees are likely the object in question whenever your problem seeks a “hierarchy,” “dominance relationship,” “ancestor/descendant relationship,” or “taxonomy.”
+
+**Graphs** – which represent relationships between arbitrary pairs of objects. Graphs are likely the object in question whenever you seek a “network,” “circuit,” “web,” or “relationship.”**Points** – which represent locations in some geometric space. For example, the locations of McDonald’s restaurants can be described by points on a map/plane. Points are likely the object in question whenever your problems work on “sites,” “positions,” “data records,” or “locations.”
+
+**Polygons** – which represent regions in some geometric spaces. For example, the borders of a country can be described by a polygon on a map/plane. Polygons and polyhedra are likely the object in question whenever you are working on “shapes,” “regions,” “configurations,” or “boundaries.”
+
+**Strings** – which represent sequences of characters or patterns. For example, the names of students in a class can be represented by strings. Strings are likely the object in question whenever you are dealing with “text,” “charac- ters,” “patterns,” or “labels.”
+
+>Take-Home Lesson: Modeling your application in terms of well-defined struc- tures and algorithms is the most important single step towards a solution.

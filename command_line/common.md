@@ -32,6 +32,14 @@ Collection of common everyday tasks and how to do them via the command line.
 
 **Solution:** `grep -i 'my word or phrase' [file_to_search]`
 
+---
+
+**Problem:** Search a directory for a file named "target.txt"
+
+**Solution:** `find . -name target.txt`
+
+**Discussion:** To count the number of times the file is found: `find . -name target.txt | grep -c target.txt`
+
 ## Modifying Output
 
 **Problem:** You want to limit the number of output lines from an operation.
