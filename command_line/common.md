@@ -40,6 +40,12 @@ Collection of common everyday tasks and how to do them via the command line.
 
 **Discussion:** To count the number of times the file is found: `find . -name target.txt | grep -c target.txt`
 
+---
+
+**Problem:** Recursively count all files in a directory
+
+**Solution:** `find . -type f | wc -l`
+
 ## Modifying Output
 
 **Problem:** You want to limit the number of output lines from an operation.
