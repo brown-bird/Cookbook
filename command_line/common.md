@@ -30,7 +30,7 @@ Collection of common everyday tasks and how to do them via the command line.
 
 **Problem:** Search a directory for files containing a word or phrase irregardless of case.
 
-**Solution:** `grep -i 'my word or phrase' [file_to_search]`
+**Solution:** Searching a single file: `grep -i 'my word or phrase' [file_to_search]`. Recursively searching a directory: `grep -ri 'my word or phrase' [directory]`
 
 ---
 
