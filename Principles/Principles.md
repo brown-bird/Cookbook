@@ -9,3 +9,18 @@ Soving a problem __quickly__ requires a broad familiariation with problem domain
 Solving a problem **efficiently** means reducing waste in as many areas as is practical. Efficiency can be machine facing and developer facing. Machine facing efficiency is algorithmically efficient. It is either memory or time effiecient or both. Developer facing efficiency is code which is simple to work with. This means simple to write, test, understand, and maintain. It is often that there are tradeoffs between machine and developer efficiencies. There are also trade-offs between developer efficient solutions. For example, code may be easy to write but difficult to test. It may be easy to maintain, using polymorphism for instance, but difficult to understand because of extensive and unclear abstraction. Unless resources are extremely limited, developer efficiency should be favored. 
 
 Code that is not difficult to maintain is free of code smells. It follows well known coding patterns. It is well tested with unit tests. It's classes and functions are well named. When the purpose of the class or method is not immediately clear it is accompanied with high level documentation explaining what it's __(single)__ purpose is. 
+
+## OO Principles
+
+### Command Query Separation
+// Problem it solves:
+
+// description
+### Dependency Injection
+// Problem it solves:
+
+// description
+### Separation of Concerns
+// Problem it solves:
+
+// description
