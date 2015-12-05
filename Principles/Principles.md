@@ -24,3 +24,61 @@ Code that is not difficult to maintain is free of code smells. It follows well k
 // Problem it solves:
 
 // description
+
+### Honest Code
+
+**Problem:** A class or method does not declare the dependencies in it's API that it needs to do it's job. This makes it difficult to test classes and methods as their dependencies cannot be easily intercepted or mocked. 
+
+Method dependencies:
+
+~~~java
+public void doSomeWork()
+{
+	Foo foo = Foo.getInstance();
+	// do some work with foo
+	...
+}
+~~~	
+
+Class dependencies: 
+
+~~~java
+public class Baconator
+{
+	private BaconSupply supply;
+	
+	public Baconator()
+	{
+		supply = new BaconFactory().createSupply();
+	}
+	
+}
+~~~
+
+**Solution:** Declare the dependencies in the API and keep your code honest!
+
+Example: 
+
+~~~java
+public void doSomething(Foo foo)
+{
+	// do stuff with foo
+	...
+}
+~~~
+
+And:
+
+~~~java
+public class Baconator
+{
+	private BaconSupply supply;
+	
+	public Baconator(BaconSupply passedInSupply)
+	{
+		supply = passedInSupply;
+	}
+	
+}
+~~~
+
