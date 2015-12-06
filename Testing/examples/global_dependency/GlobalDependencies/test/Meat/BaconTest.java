@@ -30,7 +30,8 @@ public class BaconTest
         assertThat(actual, is("I made no calls but still smell delicious!"));
     }
 
-    // subclass for testing only
+    // subclass for testing only which overrides
+    // methods that we want to alter the behavior of.
     private static class TestBaconSub extends TestableBacon
     {
         public TestBaconSub()
