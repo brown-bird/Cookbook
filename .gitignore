@@ -5,3 +5,4 @@ nbproject/
 */nb-configuration.xml
 */target/*
 */dist/*
+/Testing/examples/global_dependency/GlobalDependencies/build/
