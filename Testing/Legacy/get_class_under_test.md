@@ -169,7 +169,7 @@ public class BaconTest
     ...
 ~~~
 
-We cleanup the test instance after each test. If you are substituting the same test fake (subclass) for every test it doesn't make sense to actually use `resetInstance`. 
+We cleanup the test instance after each test. If you are substituting the same test fake (subclass) for every test it doesn't make sense to actually use `resetInstance`. Alternatively, you can pass `null` to `setTestInstance` before and/or after each test to accomplish the same state cleanup. 
 
 ~~~java    
     ...
