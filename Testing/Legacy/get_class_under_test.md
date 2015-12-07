@@ -5,7 +5,9 @@
 
 **Problem:** It is difficult to get a class or method under test because it has global dependencies.
 
-**Solution(s):** For simple cases use: 
+**Solution(s):** 
+
+For simple cases use: 
 
 - Parameterize Constructor (379)
 - Parameterize Method (383)
@@ -17,7 +19,7 @@ For more extensive and pervasive dependencies use:
 - Subclass and Override Method (401)
 - Extract Interface (362) + Lean on the Compiler (315)
 
-The above techniques work around the global dependency problem as opposed to removing the problem. To tackle this problem consider:
+The above techniques work *around* the global dependency problem as opposed to removing the problem. To tackle this problem consider:
 
 - Parameterize Method (383)
 - Parameterize Constructor (379)
@@ -28,7 +30,9 @@ The above techniques work around the global dependency problem as opposed to rem
 
 ### Introduce Static Setter (372)
 
-**Discussion:** This is a *work-around* solution for dealing with global dependencies/singletons. Ideally, we would prefer to reduce how much we have to work with singletons or manage their singleton-ness externally if possible. 
+**Discussion:** This is a *work-around* solution for dealing with global dependencies/singletons. Ideally, we would prefer to reduce how much we have to work with singletons or manage their singleton-ness externally if possible. After defining a static setter we use *Subclass and Override* to alter or nullify unwanted behavior. 
+
+Note that we could use a *mocking* framework like *mockito* instead of a subclass to override the behavior we want. One difference is that with a subclass you still have access to behavior and state that you have not overriden. 
 
 Example:
 
@@ -37,7 +41,7 @@ Assume you want to test a method like this:
 ~~~java
 public void methodToTest()
 {
-	// it uses a singleton like so...
+	// But it uses a singleton like so...
 	Bacon bacon = Bacon.getInstance();
 	String result =
 		bacon.makeNetworkCallsAndDoBaconRelatedDatabaseThings();
@@ -46,7 +50,7 @@ public void methodToTest()
 }
 ~~~
 
-And `Bacon` is a *Singleton* defined as such: 
+And `Bacon` is defined as such: 
 
 ~~~java
 package Meat;
@@ -68,10 +72,12 @@ public class Bacon
         return instance;
     }
     
-    // This method does stuff we wouldn't want done in a test.
+    // This troublesome method does stuff we don't like in our tests.
     public String makeNetworkCallsAndDoBaconRelatedDatabaseThings()
     {
-        return "I did delicious network and datase things!";
+    	...
+    	// Trust me I did naughty network stuff ;)
+       return "I did delicious network and datase things!";
     }
 }
 ~~~
@@ -83,7 +89,7 @@ We relax the visibility of the constructor of our singleton to
 
 ####Our new singleton:
 
-We relax visibility.
+We relax visibility so that we can create an instance of our soon to be defined testing subclass.
 
 ~~~java
 package Meat;
@@ -190,7 +196,7 @@ Now we can test `methodToTest()` without worrying about network and database req
     ...
 ~~~
 
-And finally our we've defined our subclass that overrides the method with undesired behavior. We've also decided to define this class as a [static nested class](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html) in the test itself since this is the only place it is used. 
+And finally our we've defined our testing subclass that overrides the method with undesired behavior. We've also decided to define this class as a [static nested class](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html) in the test itself since this is the only place it is used. 
 
 ~~~java    
 

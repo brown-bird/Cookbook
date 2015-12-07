@@ -20,6 +20,11 @@ public class BaconTest
     @After
     public void cleanup()
     {
+        /**
+         * "resetInstance" is useful if our singleton maintains state that would change in 
+         * different tests. You can alternatively pass "null" to setTestInstance
+         * to accomplish the same task.
+         */
         TestableBacon.resetInstance();
     }
     
@@ -34,10 +39,6 @@ public class BaconTest
     // methods that we want to alter the behavior of.
     private static class TestBaconSub extends TestableBacon
     {
-        public TestBaconSub()
-        {
-        }
-        
         // override to prevent unwanted behavior
         @Override
         public String makeNetworkCallsAndDoBaconRelatedDatabaseThings()
