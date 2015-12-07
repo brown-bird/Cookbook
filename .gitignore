@@ -6,3 +6,4 @@ nbproject/
 */target/*
 */dist/*
 /Testing/examples/global_dependency/GlobalDependencies/build/
+*mockito*.jar
