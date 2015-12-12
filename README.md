@@ -2,14 +2,17 @@
 Notes, links, thoughts, and recipes. 
 
 ### Problem Catalogs
-1. Testing
+1. [Testing](https://github.com/rclay83/Cookbook/blob/master/Testing/Testing.md#testing)
 2. Refactoring
 3. [Command Line](https://github.com/rclay83/Cookbook/blob/master/command_line/common.md#common-command-line-tasks)
 4. [Version Control](https://github.com/rclay83/Cookbook/blob/master/version_ctrl/VersionCtrlCatalog.md#version-control)
-
+5. Automation
+6. Regular Expressions
+7. Node
+8. Patterns
 ---
 
-## Links
+## The Rest
 
 ### General
 * [Documentation](https://github.com/rclay83/Reference-Sandbox/blob/master/Documentation.md#documentation) - The *art* of knowing what the heck is going on!
