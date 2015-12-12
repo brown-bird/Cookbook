@@ -4,6 +4,43 @@ My collection of programming notes, links, thoughts, and recipes.
 
 ## Table of Contents
 
+### Testing
+
+#### Legacy Code Problems
+
+##### Singleton in the Way
+
+* Parameterize Constructor
+* Parameterize Method
+* Extract and Override Call
+* Subclass and Override
+* Static Setter Method
+* Extract Interface + Lean on the Compiler
+
+##### Not enough time to Get Existing Code Under Test 
+
+* Sprout Method / Sprout Class
+* Wrap Method / Wrap Class
+
+##### I Don't Understand It Well Enough to Test
+
+* Characterization Tests 
+
+
+---
+
+### Refactoring and Code/Test Smells
+
+#### Duplication
+
+* Extract Superclass by extracting differences (*First Steps p.275*)
+
+
+
+---
+
+### Links
+
 #### General
 * [Documentation](https://github.com/rclay83/Reference-Sandbox/blob/master/Documentation.md#documentation) - The *art* of knowing what the heck is going on!
 * [Principles](https://github.com/rclay83/Reference-Sandbox/blob/master/Principles/Principles.md#principles) - My ramblings (or things I am likely to change my mind about and regret saying in the first place...)
