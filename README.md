@@ -1,47 +1,17 @@
-# Recipes
+##Contents
+Notes, links, thoughts, and recipes. 
 
-My collection of programming notes, links, thoughts, and recipes. 
-
-## Table of Contents
-
-### Testing
-
-#### Legacy Code Problems
-
-##### Singleton in the Way
-
-* Parameterize Constructor
-* Parameterize Method
-* Extract and Override Call
-* Subclass and Override
-* Static Setter Method
-* Extract Interface + Lean on the Compiler
-
-##### Not enough time to Get Existing Code Under Test 
-
-* Sprout Method / Sprout Class
-* Wrap Method / Wrap Class
-
-##### I Don't Understand It Well Enough to Test
-
-* Characterization Tests 
-
+### Problem Catalogs
+1. Testing
+2. Refactoring
+3. [Command Line](https://github.com/rclay83/Cookbook/blob/master/command_line/common.md#common-command-line-tasks)
+4. [Version Control](https://github.com/rclay83/Cookbook/blob/master/version_ctrl/VersionCtrlCatalog.md#version-control)
 
 ---
 
-### Refactoring and Code/Test Smells
+## Links
 
-#### Duplication
-
-* Extract Superclass by extracting differences (*First Steps p.275*)
-
-
-
----
-
-### Links
-
-#### General
+### General
 * [Documentation](https://github.com/rclay83/Reference-Sandbox/blob/master/Documentation.md#documentation) - The *art* of knowing what the heck is going on!
 * [Principles](https://github.com/rclay83/Reference-Sandbox/blob/master/Principles/Principles.md#principles) - My ramblings (or things I am likely to change my mind about and regret saying in the first place...)
 * [markdown syntax](https://github.com/rclay83/Reference-Sandbox/blob/master/markdown/MacDown_help_reference.md) - Coolest thing ever.
@@ -49,18 +19,18 @@ My collection of programming notes, links, thoughts, and recipes.
 * [Productivity](https://github.com/rclay83/Cookbook/blob/master/Productivity/productivity.md#productivity)
 * [Process](https://github.com/rclay83/Cookbook/blob/master/Principles/process.md#the-process)
 
-#### Dictionaries
+### Dictionaries
 * [General](https://github.com/rclay83/Cookbook/blob/master/dictionaries/general.md)
 * [Unit Testing](https://github.com/rclay83/Cookbook/blob/master/dictionaries/unit_testing/general_glossary.md#glossary)
 
-#### Functional Programming / Java 8
+### Functional Programming / Java 8
 * [Predicates](https://github.com/rclay83/Reference-Sandbox/blob/master/Predicates/Predicates.md#predicates-in-java-8)
 * [Java 8 Streams](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#java-8-streams)
     * [Creation](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#stream-creation) 
     * [Operations](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#operations) This includes `filter`, `map`, `anyMatch`, `collect`, and `flatMap`
     * [FlatMap](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#flatmap)
 
-#### SQL
+### SQL
 * [Single Table Queries](https://github.com/rclay83/Reference-Sandbox/blob/master/TSQL/T-SQL_fundamentals_my_examples/ch2_single_table_queries.md#single-table-queries-t-sql-fundamentals-ch2)
  
 #### Code Quality
@@ -70,7 +40,7 @@ My collection of programming notes, links, thoughts, and recipes.
 * [Law of Demeter](https://github.com/rclay83/Cookbook/blob/b0a5b232544c95d63c0a0ea707399381af205b31/pragmatic_programmer/demeter.md#pragmatic-programmer-notes)
 * [Object Oriented Design](https://github.com/rclay83/Cookbook/blob/master/Testing/goos_notes.md#object---oriented-style) - *GOOS notes*
 
-#### Commands
+### Commands
 * [git](https://github.com/rclay83/Reference-Sandbox/blob/master/git.md#cache-login) 
 
 linux
