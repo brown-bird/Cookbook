@@ -1,9 +1,9 @@
 # Version Control
 
-- [Reverting all changes From a commit][]
-- [Merging a single revision][]
-- [Merge a range of revisions][]
-- [Delete Local Copy Only][]
+- Reverting all changes From a commit
+- Merging a single revision
+- Merge a range of revisions
+- Delete Local Copy Only
 
 
 ### Reverting all changes From a commit
