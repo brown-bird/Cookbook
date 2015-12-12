@@ -1,7 +1,8 @@
 # Legacy Code "Not Enough Time"
 
-### Sprout Method
-**Problem:** Need to insert new code in a location that is difficult to get under test for some given constraint and new code can be encapsulated in a method. Giving up on testing calling code at the moment.
+**Problem:** Need to insert new code in a location that is difficult to get under test for some given constraint and new code can be encapsulated in a method. Not as good testing the original code.
+
+**Soution:** *Sprout Method*
 
 #### Algorithm:
 1. Identify change location
@@ -15,8 +16,10 @@
  
  ---
  
-### Sprout Class
+
 **Problem:** Need to insert new code in a location that is difficult to get under test for some given constraint and new code can be encapsulated in a method. Giving up on testing calling code at the moment.
+
+**Solution:** *Sprout Class*
 
 #### Algorithm:
 1. Identify change location
