@@ -43,15 +43,6 @@ Notes, links, thoughts, and recipes.
 * [Law of Demeter](https://github.com/rclay83/Cookbook/blob/b0a5b232544c95d63c0a0ea707399381af205b31/pragmatic_programmer/demeter.md#pragmatic-programmer-notes)
 * [Object Oriented Design](https://github.com/rclay83/Cookbook/blob/master/Testing/goos_notes.md#object---oriented-style) - *GOOS notes*
 
-### Commands
-* [git](https://github.com/rclay83/Reference-Sandbox/blob/master/git.md#cache-login) 
-
-linux
-
-* [searching for files](https://github.com/rclay83/Reference-Sandbox/blob/master/command_line/Searching%20for%20Files.md#searching-for-files)
-    * [locate](https://github.com/rclay83/Reference-Sandbox/blob/master/command_line/Searching%20for%20Files.md#locate)
-    * [find](https://github.com/rclay83/Reference-Sandbox/blob/master/command_line/Searching%20for%20Files.md#find)
-
 #### Testing
 * [smells](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#test-smells)
 * [Tests that are not unit tests](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#tests-that-are-not-unit-tests)
