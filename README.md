@@ -10,7 +10,7 @@ Notes, links, thoughts, and recipes.
 6. Regular Expressions
 7. Node
 8. Patterns
----
+9. [Dependency Injection](https://github.com/rclay83/Cookbook/blob/master/DependencyInjection/dependencyInjection.md#dependency-injection)
 
 ## The Rest
 
