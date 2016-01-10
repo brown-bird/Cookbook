@@ -100,4 +100,4 @@ public class SealedAdapter extends Sealed{
 ## Injecting Jersey Resources 
 
 //Todo: complete
-[Posible tutorial](https://sites.google.com/a/athaydes.com/renato-athaydes//posts/jersey_guice_rest_api)
+[Possible tutorial](https://sites.google.com/a/athaydes.com/renato-athaydes//posts/jersey_guice_rest_api)
