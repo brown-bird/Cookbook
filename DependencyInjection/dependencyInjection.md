@@ -1,6 +1,15 @@
 # Dependency Injection
 
-## Partial Injection
+* Contextual Dependencies
+* Circular References
+* Binding
+* Injecting Sealed Code
+* Injecting Jersey Resources
+
+</br>
+</br>
+
+## Contextual Dependencies
 
 **Problem:** You don't have all the arguments available to inject a service at application startup.
 
@@ -17,6 +26,8 @@ The builder is preferrred for it's flexibility in dealing with large numbers of 
 your builder's fields  to ensure that a failed or past build doesn't still contain stale data. 
 You may find it useful to instead inject a provider that returns a new builder on each usage.
 
+</br>
+</br>
 ## Circular References
 
 **Problem:** Your object graphs contain dependencies which depend on each other and are
@@ -36,12 +47,17 @@ public class CircularModule extends AbstractModule{
 }
 ~~~
 
+
+</br>
+</br>
 ## Binding
 
 **Problem:** A type is annotated with a scope you don't want. 
 
 **Solution:** *(GUICE)* bind it `Scopes.NO_SCOPE`. Bind statement scoping trumps annotations.
 
+</br>
+</br>
 ## Injecting Sealed Code
 
 **Problem:** You want to inject *3rd* party code or just code you cannot modify by adding annotations into your class.
@@ -79,6 +95,8 @@ public class SealedAdapter extends Sealed{
 }
 ~~~
 
+</br>
+</br>
 ## Injecting Jersey Resources 
 
 //Todo: complete
