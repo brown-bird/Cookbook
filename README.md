@@ -10,7 +10,8 @@ Notes, links, thoughts, and recipes.
 6. Regular Expressions
 7. Node
 8. Patterns
----
+
+
 
 ## The Rest
 
