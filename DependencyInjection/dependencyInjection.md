@@ -5,6 +5,7 @@
 * Binding
 * Injecting Sealed Code
 * Injecting Jersey Resources
+* Configuring Request and Session Scoping 
 
 </br>
 </br>
@@ -54,7 +55,7 @@ public class CircularModule extends AbstractModule{
 
 **Problem:** A type is annotated with a scope you don't want. 
 
-**Solution:** *(GUICE)* bind it `Scopes.NO_SCOPE`. Bind statement scoping trumps annotations.
+**Solution:** *(GUICE)* bind it `Scopes.NO_SCOPE`. Bind statement scoping trumps annotations. `NO_SCOPE` is the default scoping wherein every injection receives it's own instance of a service.  
 
 </br>
 </br>
@@ -94,6 +95,11 @@ public class SealedAdapter extends Sealed{
 	}
 }
 ~~~
+
+</br>
+</br>
+## Scope
+**Note:** Concurrent requests within the same session will be injected with the same instance of a session scoped service and thus thread safety may be a concern. Likewise, request scoped services that are injected into multiple objects during the same request are also the same instance. 
 
 </br>
 </br>
