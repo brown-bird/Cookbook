@@ -10,13 +10,27 @@
 </br>
 </br>
 
-## Contextual Dependencies
+## Contextual Injection
 
 **Problem:** You don't have all the arguments available to inject a service at application startup.
 
 **Solution:** 
 
-- Use assited injection with an injected provider interface implementation. 
+- Inject a provider. Then use a setter to set contextual dependencies on the injected service. 
+- Use the AssitedProvider pattern where the provider's `get` method can accept arguments. 
+~~~java
+public interface AssitedProvider<T, C>{
+	T get(C context);
+}
+
+//implementation
+public class MyAssitedProvider implements AssitedProvider<MyDependency, MyContext>{
+	public MyDependency get(MyContext context){
+		return new MyDependency(context);
+	}
+}
+~~~
+
 - Use the *Builder* pattern and inject a **builder** as the dependency that can be loaded with contextual dependencies when ready.  
 
 **Discussion**
