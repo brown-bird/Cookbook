@@ -115,6 +115,14 @@ public class SealedAdapter extends Sealed{
 ## Scope
 **Note:** Concurrent requests within the same session will be injected with the same instance of a session scoped service and thus thread safety may be a concern. Likewise, request scoped services that are injected into multiple objects during the same request are also the same instance. 
 
+### Scoping Problems
+
+* **Scope Widening** - Injecting no scope objects into Singletons or request scoped objects into session scoped objects. 
+	* **Memory leaks** - Objects that can't be garbage collected. 
+	* **Concurrency issues** - Memory integrity 
+* **Out of Scope Objects** - Attempting to access services before they are created or after they are disposed.
+
+
 </br>
 </br>
 ## Injecting Jersey Resources 
