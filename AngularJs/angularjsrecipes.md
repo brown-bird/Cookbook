@@ -1,5 +1,7 @@
 #Angularjs Recipes
 
+## General
+
 * Redirecting to an error page
 * Show data only when a value is present
 * Mocking Services
@@ -9,6 +11,10 @@
 * Chaining Operations in Data Binding Expressions
 * Filter a list based on user input
 * Bind a scope to a section of html
+
+## Testing
+
+* Load a Module Into a Test
 
 <br>
 <br>
@@ -151,8 +157,40 @@ function SimpleController($scope) {
 
 <br>
 <br>
-## Define a module
+## Load a Module Into a Test
 
-**Problem:** How to define a module
+**Problem:** How to load a module for a test
 
 **Solution:** Use `angular.module('modulename', ['array', 'of', 'dependenciesForModule']);` You can declare other modules as dependencies within the array of the second argument to `angular.module`/ This allows you to define multiple modules and compose them as dependencies. 
+
+You can load modules using three methods:
+
+* string literal - the name of the module. Loads an existing module with the same name. 
+* function() - an anonymous function defining the module
+* Object - an object defining the module. Useful for overriding existing modules with mock ones.
+
+**Problem:** You want to override an existing service with a mock you define yourself. 
+
+**Solution:** Use the Object definition of a module to register the service with `angular.mock.module` such as:
+
+~~~js
+it ("should do something", function(){
+	angular.mock.module({
+		'serviceIWantToMock' : {
+			somefunction : function(){
+				// do stuff
+			}
+		}
+	});
+	
+	var service;
+	
+	angular.mock.inject(function(ServiceWithDependencyOnServiceIMocked){
+		// the injected service will use the mock as it's dependency!		
+	}
+});
+~~~
+
+**Note:** There can be many modules per test, but there is only one **injector**.
+	
+
