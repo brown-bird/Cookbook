@@ -4,12 +4,12 @@ When to use what data structure? Data Structures can be grouped according to the
 
 ### Grouping by Performance Requirements
 
-#### Random access + Known data size
+#### Random access_(index based)_ + Known data size
 
 - Array
 - ArrayList
 
-#### Random acess + Unkown data size
+#### Random acess_(key based)_ + Unkown data size
 
 - Map
 	- HashMap
@@ -76,3 +76,36 @@ A heap is a complete binary tree whose elements have keys which satisfy the foll
 #### TreeMap
 
 SortedMap implementation. Red Black Tree implementation. Sorted by natural ordering of it's keys or via a Comparator provided at map creation time. Guaraneed log(n) time cost for `containsKey`, `get`, `put`, and `remove` operations. **Not synchronized**. 
+
+---
+
+### Needs
+
+Index based access
+
+* Array
+* ArrayList
+
+Frequent iteration
+
+* Array
+* ArrayList
+
+Frequent Insertions and Deletions
+
+* LinkedList
+
+Constant Time Storage and Retrieval based on content
+
+* Dictionary
+* Map
+* HashMap
+* HashSet
+
+Storage and Retrieval based on retrieval order (containers)
+
+* Stack
+* Queue
+
+
+*TODO: Create a table where y-axis is the data structure and x-axis is list of operations. List the time complexity for each operation for each data structure where relevant*
