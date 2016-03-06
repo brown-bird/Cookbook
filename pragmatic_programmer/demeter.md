@@ -22,9 +22,9 @@ public void plotDate(Date aDate, Selection aSelection)
 }
 ~~~
 
-The problem with the above example is that `plotDate` is coupled to  **3** classes to do it's work. If any changes happen in one of those 3 classes, e.g. a `Location` no longer contains a `TimeZone`, then `plotDate` must also change it's code. 
+The problem with the above example is that `plotDate` is **coupled to 3** classes to do it's work. If any changes happen in one of those 3 classes, e.g. a `Location` no longer contains a `TimeZone`, then `plotDate` must also change it's code. 
 
-Instead of digging throught the hierarchy yourself ask for what is needed *(ala Dependency Injection)*. The decoupled `plotDate` looks like this:
+Instead of digging through the hierarchy yourself ask for what is needed *(ala Dependency Injection)*. The decoupled `plotDate` looks like this:
 
 ~~~java
 public void plotDate(Date aDate, TimeZone aTimeZone)
