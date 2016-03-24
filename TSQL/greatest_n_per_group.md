@@ -26,7 +26,7 @@ where my_date = max_my_date
 ~~~
 <br>
 ### Returns the max or min
-This solution returns the **first** row or the row with the highest total. 
+This solution returns the **first** row or the row with the highest total. **preferred solution** 
 
 ~~~sql
 WITH summary AS (
@@ -40,3 +40,5 @@ SELECT s.*
   FROM summary s
  WHERE s.rk = 1
 ~~~
+
+**Note:** PARTITION BY [column, ...] will append the the result of the WINDOW FUNCTION for the partition that matches the current row's columns
