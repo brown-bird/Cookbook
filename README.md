@@ -1,64 +1,89 @@
-##Contents
-Notes, links, thoughts, and recipes. 
+#Contents
 
-### Problem Catalogs
-1. [Testing](https://github.com/rclay83/Cookbook/blob/master/Testing/Testing.md#testing)
-2. Sql
-2. Refactoring
-3. [Command Line](https://github.com/rclay83/Cookbook/blob/master/command_line/common.md#common-command-line-tasks)
-4. [Version Control](https://github.com/rclay83/Cookbook/blob/master/version_ctrl/VersionCtrlCatalog.md#version-control)
-5. Automation
-6. Regular Expressions
-7. Node
-8. Patterns
-9. [Dependency Injection](https://github.com/rclay83/Cookbook/blob/master/DependencyInjection/dependencyInjection.md#dependency-injection)
+<br>
+## Problem Catalogs
+### Coming Soon
+
+1. *Automation*
+2. *Refactoring*
+3. *Regular Expressions*
+4. *Node*
+<br>
+
+## Code Quality
+1. [Exceptions](https://github.com/rclay83/Reference-Sandbox/blob/master/Exceptions.md#exceptions)
+* [Readable Code](https://github.com/rclay83/Cookbook/blob/master/smells/Readable_Code.md#readable-code)
+* [Smells](https://github.com/rclay83/Cookbook/blob/master/smells/smells_refactoring_fowler.md#code-smells) - From Martin Fowler's *Refactoring*
+* [Law of Demeter](https://github.com/rclay83/Cookbook/blob/b0a5b232544c95d63c0a0ea707399381af205b31/pragmatic_programmer/demeter.md#pragmatic-programmer-notes)
+* [Object Oriented Design](https://github.com/rclay83/Cookbook/blob/master/Testing/goos_notes.md#object---oriented-style) - *GOOS notes*
 
 
-## The Rest
+<br> 
+## Command Line 
 
-### General
-* [Documentation](https://github.com/rclay83/Reference-Sandbox/blob/master/Documentation.md#documentation) - The *art* of knowing what the heck is going on!
+1. [common tasks](https://github.com/rclay83/Cookbook/blob/master/command_line/common.md#common-command-line-tasks)
+
+
+## Dependency Injection
+
+1. [Dependency Injection](https://github.com/rclay83/Cookbook/blob/master/DependencyInjection/dependencyInjection.md#dependency-injection)
+2. [Contextual Injeciton](https://github.com/rclay83/Cookbook/blob/master/DependencyInjection/dependencyInjection.md#contextual-injection)
+3. [Circular References](https://github.com/rclay83/Cookbook/blob/master/DependencyInjection/dependencyInjection.md#circular-references) *Uh oh!*
+4. [Binding](https://github.com/rclay83/Cookbook/blob/master/DependencyInjection/dependencyInjection.md#binding)
+5. [Sealed Code](https://github.com/rclay83/Cookbook/blob/master/DependencyInjection/dependencyInjection.md#injecting-sealed-code) *aka 3rd party code*
+
+<br>
+## General
+1. [Documentation](https://github.com/rclay83/Reference-Sandbox/blob/master/Documentation.md#documentation) - The *art* of knowing what the heck is going on!
 * [Principles](https://github.com/rclay83/Reference-Sandbox/blob/master/Principles/Principles.md#principles) - My ramblings (or things I am likely to change my mind about and regret saying in the first place...)
 * [markdown syntax](https://github.com/rclay83/Reference-Sandbox/blob/master/markdown/MacDown_help_reference.md) - Coolest thing ever.
 * [DataStructures](https://github.com/rclay83/Reference-Sandbox/blob/master/data_structures/data_structures) - The pots and pans of the kitchen.
 * [Productivity](https://github.com/rclay83/Cookbook/blob/master/Productivity/productivity.md#productivity)
 * [Process](https://github.com/rclay83/Cookbook/blob/master/Principles/process.md#the-process)
 
-### Dictionaries
-* [General](https://github.com/rclay83/Cookbook/blob/master/dictionaries/general.md)
+<br>
+## Dictionaries
+1. [General](https://github.com/rclay83/Cookbook/blob/master/dictionaries/general.md)
 * [Unit Testing](https://github.com/rclay83/Cookbook/blob/master/dictionaries/unit_testing/general_glossary.md#glossary)
 
-### Functional Programming / Java 8
-* [Predicates](https://github.com/rclay83/Reference-Sandbox/blob/master/Predicates/Predicates.md#predicates-in-java-8)
+<br>
+## Functional Programming / Java 8
+1. [Predicates](https://github.com/rclay83/Reference-Sandbox/blob/master/Predicates/Predicates.md#predicates-in-java-8)
 * [Java 8 Streams](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#java-8-streams)
     * [Creation](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#stream-creation) 
     * [Operations](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#operations) This includes `filter`, `map`, `anyMatch`, `collect`, and `flatMap`
     * [FlatMap](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#flatmap)
 
-### SQL
-* [Single Table Queries](https://github.com/rclay83/Reference-Sandbox/blob/master/TSQL/T-SQL_fundamentals_my_examples/ch2_single_table_queries.md#single-table-queries-t-sql-fundamentals-ch2)
+<br>
+## SQL
+1. [Single Table Queries](https://github.com/rclay83/Cookbook/blob/master/TSQL/T-SQL_fundamentals_my_examples/ch2_single_table_queries.md#single-table-queries-t-sql-fundamentals-ch2)
+2. [Greatest *N* Per Group](https://github.com/rclay83/Cookbook/blob/master/TSQL/greatest_n_per_group.md#greatest-n-per-group)
  
-#### Code Quality
-* [Exceptions](https://github.com/rclay83/Reference-Sandbox/blob/master/Exceptions.md#exceptions)
-* [Readable Code](https://github.com/rclay83/Cookbook/blob/master/smells/Readable_Code.md#readable-code)
-* [Smells](https://github.com/rclay83/Cookbook/blob/master/smells/smells_refactoring_fowler.md#code-smells) - From Martin Fowler's *Refactoring*
-* [Law of Demeter](https://github.com/rclay83/Cookbook/blob/b0a5b232544c95d63c0a0ea707399381af205b31/pragmatic_programmer/demeter.md#pragmatic-programmer-notes)
-* [Object Oriented Design](https://github.com/rclay83/Cookbook/blob/master/Testing/goos_notes.md#object---oriented-style) - *GOOS notes*
 
-#### Testing
-* [smells](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#test-smells)
+
+<br>
+## Testing
+1. [smells](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#test-smells)
 * [Tests that are not unit tests](https://github.com/rclay83/Reference-Sandbox/blob/master/smells/unitTesting/general_testing_smells.md#tests-that-are-not-unit-tests)
 * [legacy code](https://github.com/rclay83/Reference-Sandbox/blob/master/Testing/Legacy/not_enough_time.md#legacy-code-not-enough-time)
 * [GOOS](https://github.com/rclay83/Cookbook/blob/50f467b928c6b6d4941503e51bed132391697952/Testing/goos_notes.md#goos-notes)
+* [Common Problems](https://github.com/rclay83/Cookbook/blob/master/Testing/Testing.md#testing)
 
-#### Patterns
+<br>
+## Patterns
 
-* [Singletons](https://github.com/rclay83/Reference-Sandbox/blob/master/design_patterns/singleton/Singletons.md#singletons)
+1. [Singletons](https://github.com/rclay83/Reference-Sandbox/blob/master/design_patterns/singleton/Singletons.md#singletons)
 * [Builder](https://github.com/rclay83/Reference-Sandbox/blob/master/Patterns/src/builder/NutritionFacts.java) - *Example*: NutritionFacts version
 
-#### Online Books
+<br>
+## Version Control
 
-* [free-programming-books](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md) - Massive collection of online books and courses
+1. [Problems](https://github.com/rclay83/Cookbook/blob/master/version_ctrl/VersionCtrlCatalog.md#version-control)
+
+<br>
+## Online Books
+
+1. [free-programming-books](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md) - Massive collection of online books and courses
 * [Clojure for the Brave](http://www.braveclojure.com/)
 * [Learn you Haskell for Great Good](http://learnyouahaskell.com/chapters)
 * [Why's (Poignant) guide to Ruby](http://poignant.guide/book/) - funny cartoon book about foxes and ruby and a built in shell!
