@@ -1,7 +1,7 @@
 nbproject/
 */build/*
 */build.xml
-*/*.xml
+*.xml
 *manifest.mf
 */nb-configuration.xml
 */target/*
