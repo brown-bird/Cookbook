@@ -42,7 +42,9 @@
 * [Process](https://github.com/rclay83/Cookbook/blob/master/Principles/process.md#the-process)
 
 <br>
-## Dictionaries
+## Dictionaries 
+Terms
+
 1. [General](https://github.com/rclay83/Cookbook/blob/master/dictionaries/general.md)
 * [Unit Testing](https://github.com/rclay83/Cookbook/blob/master/dictionaries/unit_testing/general_glossary.md#glossary)
 
