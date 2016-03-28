@@ -60,7 +60,7 @@
 2. [Greatest *N* Per Group](https://github.com/rclay83/Cookbook/blob/master/TSQL/greatest_n_per_group.md#greatest-n-per-group)
 3. [Stored Procedures](https://github.com/rclay83/Cookbook/blob/master/TSQL/StoredProcs.md#working-with-stored-procedures)
 4. [Greatest *N* Per Group](https://github.com/rclay83/Cookbook/blob/master/TSQL/greatest_n_per_group.md#greatest-n-per-group) e.g. Get first row from group. 
-5. Window Functions - *coming soon*
+5. [Window Functions](https://github.com/rclay83/Cookbook/blob/master/TSQL/window_functions.md#window-functions)
 6. Temporary Tables - *coming soon*
  
 
