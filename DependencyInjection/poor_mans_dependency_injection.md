@@ -11,3 +11,5 @@ Poor Man’s Dependency Injection in comparison to regular Dependency
 This pattern is transient the default constructor is used for each concrete classes dependencies recursively. Or concrete implementations are passed to the dependencies.
 
 DI is about creating highly flexible components, both in lifecycle and component selection.  DI removes component resolution responsibilities from classes, therefore removing code.  And less code is ALWAYS a good thing.
+
+Everywhere you use the "new" keyword you are introducing more coupling. 
