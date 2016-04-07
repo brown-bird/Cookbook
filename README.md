@@ -16,6 +16,10 @@
 * [Smells](https://github.com/rclay83/Cookbook/blob/master/smells/smells_refactoring_fowler.md#code-smells) - From Martin Fowler's *Refactoring*
 * [Law of Demeter](https://github.com/rclay83/Cookbook/blob/b0a5b232544c95d63c0a0ea707399381af205b31/pragmatic_programmer/demeter.md#pragmatic-programmer-notes)
 * [Object Oriented Design](https://github.com/rclay83/Cookbook/blob/master/Testing/goos_notes.md#object---oriented-style) - *GOOS notes*
+ 
+<br>
+## Language Specific
+1. [Inner Classes vs Nested Static Classes](https://github.com/rclay83/Cookbook/blob/master/java_general/nested_static_classes.md#nested-static-classes) - *Java*
 
 
 <br> 
@@ -42,7 +46,7 @@
 * [Process](https://github.com/rclay83/Cookbook/blob/master/Principles/process.md#the-process)
 
 <br>
-## Dictionaries 
+## Dictionaries *(aka what words mean!)*
 Terms
 
 1. [General](https://github.com/rclay83/Cookbook/blob/master/dictionaries/general.md)
