@@ -27,7 +27,7 @@
 
 1. [common tasks](https://github.com/rclay83/Cookbook/blob/master/command_line/common.md#common-command-line-tasks)
 
-
+<br>
 ## Dependency Injection
 
 1. [Dependency Injection](https://github.com/rclay83/Cookbook/blob/master/DependencyInjection/dependencyInjection.md#dependency-injection)
@@ -79,6 +79,7 @@ Terms
 * [GOOS](https://github.com/rclay83/Cookbook/blob/50f467b928c6b6d4941503e51bed132391697952/Testing/goos_notes.md#goos-notes)
 * [Common Problems](https://github.com/rclay83/Cookbook/blob/master/Testing/Testing.md#testing)
 
+
 <br>
 ## Patterns
 
@@ -89,6 +90,7 @@ Terms
 ## Version Control
 
 1. [Problems](https://github.com/rclay83/Cookbook/blob/master/version_ctrl/VersionCtrlCatalog.md#version-control)
+
 
 <br>
 ## Online Books
