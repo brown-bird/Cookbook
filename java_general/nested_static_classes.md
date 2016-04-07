@@ -1,10 +1,13 @@
 #### Nested static classes:
-* can be accessed outside of the inner class (if public)
-* have no access to instance variables of the enclosing class
-	* must be passed in via method or constructor parameters
-* Don't make sense if private?
+* Can be accessed outside of the inner class (if public)
+* Have no access to instance variables of the enclosing class
+	* Instance variables must be passed in via constructor or method parameters
+
  
  
 #### Inner Classes:
 * Cannot exist without an enclosing instance
 * Do have access to instance variables
+
+#### Prefer Nested Static Classes
+Nested Static Classes are more **encapsulated** than Inner Classes. Yay for encapsulation!
