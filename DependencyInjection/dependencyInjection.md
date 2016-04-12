@@ -14,6 +14,10 @@
 
 **Problem:** You don't have all the arguments available to inject a service at application startup.
 
+**Solution:**
+
+AssistedInjection pattern with the [FactoryModuleBuilder](http://google.github.io/guice/api-docs/latest/javadoc/com/google/inject/assistedinject/FactoryModuleBuilder.html). The gist is that you inject a guice created factory that can create the object you actually need by passing the contextual values you have only at runtime. 
+
 **Solution:** 
 
 - Inject a provider. Then use a setter to set contextual dependencies on the injected service. 
