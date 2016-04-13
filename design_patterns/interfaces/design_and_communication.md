@@ -14,3 +14,8 @@ Interfaces encourage you to consider what **behavior** your system needs instead
 ### Interfaces and Dependency Injection
 
 Dependencies on abstractions combined with dependency injection allow for resilient code.  
+
+<br>
+### Clear Contracts
+
+An interface makes it clear what behavior you need to implement to replace an object or add new behavior.
