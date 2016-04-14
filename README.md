@@ -106,4 +106,5 @@ Terms
 
 <br>
 ## Online Tools
-1. [dillinger.io](dillinger.io) - *Online Markdown Editor*
+1. [dillinger.io](dillinger.io) - *Markdown Editor*
+2. [jsFiddle](https://jsfiddle.net/) - *JavaScript Editor*
