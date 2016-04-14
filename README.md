@@ -102,3 +102,8 @@ Terms
 * [Eloquent JavaScript](http://eloquentjavascript.net/)
 * [Maven by Example](http://books.sonatype.com/mvnex-book/reference/public-book.html)
 * [Maven The complete Reference](http://books.sonatype.com/mvnref-book/reference/public-book.html)
+* [Tortoise SVN Daily Use Guide](https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug.html)
+
+<br>
+## Online Tools
+1. [dillinger.io](dillinger.io) - *Online Markdown Editor*
