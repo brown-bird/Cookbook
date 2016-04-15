@@ -103,9 +103,9 @@ Terms
 * [Maven by Example](http://books.sonatype.com/mvnex-book/reference/public-book.html)
 * [Maven The complete Reference](http://books.sonatype.com/mvnref-book/reference/public-book.html)
 * [Tortoise SVN Daily Use Guide](https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug.html)
+* [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 
 <br>
 ## Online Tools
 1. [dillinger.io](dillinger.io) - *Markdown Editor*
 2. [jsFiddle](https://jsfiddle.net/) - *JavaScript Editor*
-3. [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
