@@ -108,3 +108,4 @@ Terms
 ## Online Tools
 1. [dillinger.io](dillinger.io) - *Markdown Editor*
 2. [jsFiddle](https://jsfiddle.net/) - *JavaScript Editor*
+3. [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
