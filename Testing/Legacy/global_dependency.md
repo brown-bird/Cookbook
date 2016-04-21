@@ -1,7 +1,6 @@
-# Trouble getting a class into a test harness
+# The Case of the Irritating Global Dependency p.118
 
-
-### The Case of the Irritating Global Dependency p.118
+*Trouble getting a class into a test harness*
 
 **Problem:** It is difficult to get a class or method under test because it has global dependencies.
 

@@ -1,6 +1,13 @@
 # Java 8 Streams 
 *STRAMS* for those in the know ;)
 
+* Streams are an abstraction. There is no data in a stream. 
+* Non-mutating pipeline. 
+* Avoid shared mutability. Use Collectors instead of sharing a reference to a mutable collection. 
+
+### Why use Streams?
+Abstract common operations on collections such as iteration and removing items that match some criteria. This cleans up the code, reduces duplicaiton, prevents common boundary errors, and straightens out spaghetti. 
+
 __Note:__ Streams in Java 8 are not the same things as `InputStream` and `OutputStream` from Java I/O.
 
 ### Some Stream Operations
