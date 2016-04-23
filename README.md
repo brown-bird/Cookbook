@@ -16,6 +16,7 @@
 * [Smells](https://github.com/rclay83/Cookbook/blob/master/smells/smells_refactoring_fowler.md#code-smells) - From Martin Fowler's *Refactoring*
 * [Law of Demeter](https://github.com/rclay83/Cookbook/blob/b0a5b232544c95d63c0a0ea707399381af205b31/pragmatic_programmer/demeter.md#pragmatic-programmer-notes)
 * [Object Oriented Design](https://github.com/rclay83/Cookbook/blob/master/Testing/goos_notes.md#object---oriented-style) - *GOOS notes*
+* [Open Closed Principle](https://github.com/rclay83/Cookbook/blob/52b02420735c070edc0e0f08d33cf4d1998e10cd/design_patterns/SOLID/OpenClosedPrinciple.md#open-closed-principle)
  
 <br>
 ## Language Specific
@@ -59,6 +60,9 @@ Terms
     * [Creation](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#stream-creation) 
     * [Operations](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#operations) This includes `filter`, `map`, `anyMatch`, `collect`, and `flatMap`
     * [FlatMap](https://github.com/rclay83/Reference-Sandbox/blob/master/java8/Streams.md#flatmap)
+* [Lambdas in Java](https://github.com/rclay83/Cookbook/blob/aa05f351290c4d19407619ed9ee782f47f383f0e/java8/LambdasInJava.md#lambdas-in-java)
+* [Method References](https://github.com/rclay83/Cookbook/blob/aa05f351290c4d19407619ed9ee782f47f383f0e/java8/MethodReferences.md#method-references)
+* [Design Patterns with Lambdas](https://github.com/rclay83/Cookbook/blob/aa05f351290c4d19407619ed9ee782f47f383f0e/java8/StrategyPatternOrHigherOrderFunctions.md#design-patterns-with-lambdas) - Strategy, Decorator, Execute Around Metho (EAM)
 
 <br>
 ## SQL
@@ -78,13 +82,18 @@ Terms
 * [legacy code](https://github.com/rclay83/Reference-Sandbox/blob/master/Testing/Legacy/not_enough_time.md#legacy-code-not-enough-time)
 * [GOOS](https://github.com/rclay83/Cookbook/blob/50f467b928c6b6d4941503e51bed132391697952/Testing/goos_notes.md#goos-notes)
 * [Common Problems](https://github.com/rclay83/Cookbook/blob/master/Testing/Testing.md#testing)
+* [Dependency Breaking Techniques](https://github.com/rclay83/Cookbook/blob/49f88f2e22266578250d0a3e8f9d3326b3b169eb/Testing/Legacy/Dependency_Breaking_Techniques.md#dependency-breaking-techniques)
+* [Difficult To Construct Classes](https://github.com/rclay83/Cookbook/blob/49f88f2e22266578250d0a3e8f9d3326b3b169eb/Testing/Legacy/DifficultToConstructClasses.md#difficult-to-construct-classes)
 
 
 <br>
-## Patterns
+## Design Patterns
 
 1. [Singletons](https://github.com/rclay83/Reference-Sandbox/blob/master/design_patterns/singleton/Singletons.md#singletons)
 * [Builder](https://github.com/rclay83/Reference-Sandbox/blob/master/Patterns/src/builder/NutritionFacts.java) - *Example*: NutritionFacts version
+* [Adapter](https://github.com/rclay83/Cookbook/blob/52b02420735c070edc0e0f08d33cf4d1998e10cd/design_patterns/AdapterPattern.md#adapter-pattern)
+* [Composition Over Inheritance](https://github.com/rclay83/Cookbook/blob/0e174b4664647f931b32d4a5ea60e9013e36d0d5/design_patterns/composition.md#composition-over-inheritance)
+
 
 <br>
 ## Version Control
