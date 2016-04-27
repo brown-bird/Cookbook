@@ -34,7 +34,7 @@
  ---
  
 ### Wrap Method
-Useful when a behavior needs to occur around the same time as an existing method invocation (temporal coupling)
+Useful when a behavior needs to occur around the same time as an existing method invocation (temporal coupling). Behavior must occur either **before** or **after** the method that will be wrapped.
 
 #### Algorithm (re-name original method version):
 1. Identify a method you need to change.
