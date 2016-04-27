@@ -1,39 +1,32 @@
 # Legacy Code "Not Enough Time"
 
+## Sprout Method
+
 **Problem:** Need to insert new code in a location that is difficult to get under test for some given constraint and new code can be encapsulated in a method. Not as good testing the original code.
 
-**Soution:** *Sprout Method*
+
 
 #### Algorithm:
 1. Identify change location
 2. If change can be formulated as method, write method call and comment out.
-3. Visibility of new method can be set to package private
-4. Old method and new logic can be tested using reflection (expensive?)
-5. Pass local variables (if needed) as arguments
-6. Assign return value to variable if needed.
-7. Develop method using TDD
-8. Remove comment
+3. Visibility of new method can be set to package private *and tested*
+4. Pass local variables (if needed) as arguments
+5. Assign return value to variable if needed.
+6. Develop method using TDD
+7. Remove comment
  
- ---
- 
+<br>
+##Sprout Class
 
-**Problem:** Need to insert new code in a location that is difficult to get under test for some given constraint and new code can be encapsulated in a method. Giving up on testing calling code at the moment.
+**Problem:** Need to insert new code in a location that is difficult to get under test for some given constraint and new code (can't?) be encapsulated in a method. Giving up on testing calling code at the moment.
 
 **Solution:** *Sprout Class*
 
 #### Algorithm:
-1. Identify change location
-2. If change can be formulated as method, write method call and comment out.
-3. Visibility of new method can be set to package private
-4. Old method and new logic can be tested using reflection (expensive?)
-5. Pass local variables (if needed) as arguments
-6. Assign return value to variable if needed.
-7. Develop method using TDD
-8. Remove comment
+Same as *sprout method* but with a class instead. 
 
- ---
- 
-### Wrap Method
+<br>
+## Wrap Method
 Useful when a behavior needs to occur around the same time as an existing method invocation (temporal coupling). Behavior must occur either **before** or **after** the method that will be wrapped.
 
 #### Algorithm (re-name original method version):
@@ -49,10 +42,11 @@ Useful when a behavior needs to occur around the same time as an existing method
 
 **Note:** version 2 preserves the original method signature and allows both versions to be called.
 ##### Advantages:
-1. Explicitly makes new functionality independent of exiting functionality.
+1. Explicitly makes new functionality independent of exiting functionality. Keeps methods focused on *ideally* one responsibility or at least fewer!
+
 ##### Disadvantages:
 1. Can lead to poor names after re-naming operations
-2. New functionality must be able to be executed either before or after existing functionality. It cannot occur during the original functionality.
+2. New functionality must be able to be executed either **before** or **after** existing functionality. It cannot occur during the original functionality.
 
  ---
  
