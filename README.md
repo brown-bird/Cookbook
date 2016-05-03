@@ -100,6 +100,11 @@ Terms
 
 1. [Problems](https://github.com/rclay83/Cookbook/blob/master/version_ctrl/VersionCtrlCatalog.md#version-control)
 
+<br>
+## Javascript
+
+1. [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/) - javascript quirks
+2. [Eloquent JavaScript](http://eloquentjavascript.net/)
 
 <br>
 ## Online Books
