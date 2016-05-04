@@ -17,6 +17,7 @@
 * [Law of Demeter](https://github.com/rclay83/Cookbook/blob/b0a5b232544c95d63c0a0ea707399381af205b31/pragmatic_programmer/demeter.md#pragmatic-programmer-notes)
 * [Object Oriented Design](https://github.com/rclay83/Cookbook/blob/master/Testing/goos_notes.md#object---oriented-style) - *GOOS notes*
 * [Open Closed Principle](https://github.com/rclay83/Cookbook/blob/52b02420735c070edc0e0f08d33cf4d1998e10cd/design_patterns/SOLID/OpenClosedPrinciple.md#open-closed-principle)
+* [Code Review Best Practices)[http://kevinlondon.com/2015/05/05/code-review-best-practices.html]
  
 <br>
 ## Language Specific
