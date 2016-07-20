@@ -53,7 +53,7 @@
 Terms
 
 1. [General](https://github.com/rclay83/Cookbook/blob/master/dictionaries/general.md)
-* [Unit Testing](https://github.com/rclay83/Cookbook/blob/master/dictionaries/unit_testing/general_glossary.md#glossary)
+* [Unit Testing](https://github.com/rclay83/Cookbook/blob/master/dictionaries/unit_testing/general.md#glossary)
 
 <br>
 ## Functional Programming / Java 8
