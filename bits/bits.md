@@ -3,7 +3,7 @@
 
 [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators)
 
-### a & b
+### Bitwise AND
 
 Bitwise "and" operator `&`. 
 
@@ -13,8 +13,25 @@ Bitwise "and" operator `&`.
 
 0 & 0 = 0
 
-### XOR
-*TODO*
+### Bitwise XOR
+
+Bitwise exclusive Or. Written using the `^` symbol. Similar to the bitwise **OR** operator `|`
+except that it evaluates to 1 for a given position when exactly one of the input bits for that position
+is 1. if both are 0 or both are 1, the **XOR** operator evaluates to 0:
+
+0 ^ 0 = 0
+
+0 ^ 1 = 1
+
+1 ^ 0 = 1
+
+1 ^ 1 = 0
+
+Another way to look at bitwise **XOR** is that each bit in the result is a 1 if the input bits are different, or 0 if they are the same. 
+
+The `^` operator is often used to toggle (i.e. change from 0 to 1, or 1 to 0) some of the bits in an integer expression while leaving others alone. For example:
+
+	y = x ^ 1; // toggle the lowest bit in x, and store the result in y.
 
 ### Unary Bitwise complement operator
 
@@ -76,3 +93,6 @@ Multiplication works the same as in decimal. What makes multiplication difficult
 Multiplying by two: Just add a 0 to the right (the least significant digit). This is a left bit shift. 
 
 
+### Sources:
+1. http://playground.arduino.cc/Code/BitMath#bitwise_xor
+2. http://www4.wittenberg.edu/academics/mathcomp/shelburne/comp255/notes/binarymultiplication
