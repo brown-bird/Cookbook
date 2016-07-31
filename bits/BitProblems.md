@@ -4,8 +4,20 @@
 2. Converting from binary to decimal
 3. Counting the number of "set" bits in an integer
 4. Determining the "parity" of an integer
+5. Identify the lowest set bit of an integer
+6. Clear the lowest set bit of an integer
 
+### Identify the lowest set bit of an integer
 
+`y = x & ~(x-1)` isolates the lowest set bit in x. All other bits in `y` are 0. 
+
+### Clear the lowest set bit of an integer
+
+`x ^ (x & ~(x-1))` clears the lowest set bit of `x` using **XOR**
+```
+y = x & ~(x-1)  // isolates the lowest set bit in x
+x ^ y           // clears the lowest set bit in x
+```
 ### Resources
 
 * [binary math](http://www.math.grin.edu/~rebelsky/Courses/152/97F/Readings/student-binary)
