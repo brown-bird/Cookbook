@@ -39,6 +39,16 @@ For example, the parity of 1011 is 1 while the parity of 101101 is 0.
 y = x & ~(x-1)  // isolates the lowest set bit in x
 x ^ y           // clears the lowest set bit in x
 ```
+A more simple solution to clearing the lowest set bit is to use:
+x & (x - 1)
+
+```
+let x = 5, then x-1 = 4
+101 // 5d
+100 // 4d
+
+101 & 100 = 100 // lowest bit in 101 is cleared!
+```
 ### Resources
 
 * [binary math](http://www.math.grin.edu/~rebelsky/Courses/152/97F/Readings/student-binary)
