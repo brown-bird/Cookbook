@@ -7,6 +7,27 @@
 5. Identify the lowest set bit of an integer
 6. Clear the lowest set bit of an integer
 
+### Count the number of bits in a binary word
+
+```
+public int countBits(int x)
+{
+  int count = 0;
+  
+  while (x != 0)
+  {
+    count += x & 1; // adds 1 if the last bit is 1
+    x >>>= 1; // right shifts x left filling with a 0
+  }
+  
+  return count;
+}
+```
+
+### Compute the parity of a binary word
+The parity of a binary word is 1 if the number of 1's in the word is odd; otherwise it is 0. 
+For example, the parity of 1011 is 1 while the parity of 101101 is 0.
+
 ### Identify the lowest set bit of an integer
 
 `y = x & ~(x-1)` isolates the lowest set bit in x. All other bits in `y` are 0. 
