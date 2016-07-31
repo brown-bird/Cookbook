@@ -40,7 +40,7 @@ y = x & ~(x-1)  // isolates the lowest set bit in x
 x ^ y           // clears the lowest set bit in x
 ```
 A more simple solution to clearing the lowest set bit is to use:
-x & (x - 1)
+`x & (x - 1)`
 
 ```
 let x = 5, then x-1 = 4
