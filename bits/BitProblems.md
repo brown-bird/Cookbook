@@ -28,6 +28,26 @@ public int countBits(int x)
 The parity of a binary word is 1 if the number of 1's in the word is odd; otherwise it is 0. 
 For example, the parity of 1011 is 1 while the parity of 101101 is 0.
 
+**Psuedocode:**
+
+let x = the binary word.
+
+```java
+public short parity(long x)
+{
+	short parity = 0;
+	
+	while (x != 0)
+	{
+		// XOR. odd number of 1's will leave parity = 1. 
+		// even number will leave it 0.
+		parity ^= (x & 1); 
+		x >>>= 1;
+	}
+	return parity;
+}
+```	
+
 ### Identify the lowest set bit of an integer
 
 `y = x & ~(x-1)` isolates the lowest set bit in x. All other bits in `y` are 0. 
