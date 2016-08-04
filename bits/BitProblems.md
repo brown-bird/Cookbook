@@ -7,6 +7,7 @@
 5. Identify the lowest set bit of an integer
 6. Clear the lowest set bit of an integer
 
+<br>
 ### Count the number of bits in a binary word
 
 ```
@@ -23,7 +24,7 @@ public int countBits(int x)
   return count;
 }
 ```
-
+<br>
 ### Compute the parity of a binary word
 The parity of a binary word is 1 if the number of 1's in the word is odd; otherwise it is 0. 
 For example, the parity of 1011 is 1 while the parity of 101101 is 0.
@@ -47,11 +48,12 @@ public short parity(long x)
 	return parity;
 }
 ```	
-
+<br>
 ### Identify the lowest set bit of an integer
 
 `y = x & ~(x-1)` isolates the lowest set bit in x. All other bits in `y` are 0. 
 
+<br>
 ### Clear the lowest set bit of an integer
 
 `x ^ (x & ~(x-1))` clears the lowest set bit of `x` using **XOR**
