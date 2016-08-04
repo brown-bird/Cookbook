@@ -120,6 +120,7 @@ Terms
 * [Maven The complete Reference](http://books.sonatype.com/mvnref-book/reference/public-book.html)
 * [Tortoise SVN Daily Use Guide](https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug.html)
 * [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
+* [MASSIVE LIST OF ALL THINGS IN ALL LANGUAGES](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md)
 
 <br>
 ## Online Tools
