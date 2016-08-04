@@ -8,6 +8,17 @@
 6. Clear the lowest set bit of an integer
 
 <br>
+
+###General notes
+
+Two keys to performance:
+
+1. Processing multiple bits at a time
+2. Caching results in an array based lookup table
+ 
+####Processing multiple bits at a time
+If the operation is associative meaning the order in which the bits are processed doesn't matter, consider splitting and caching the result of processing groups of bits. For example, instead of caching the result of computing the parity 2<sup>64</sup> bit words, consider caching the parity of 2<sup>16</sup> words and then computing the parity of those results.
+<br>
 ### Count the number of bits in a binary word
 
 ```
