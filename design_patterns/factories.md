@@ -1,4 +1,4 @@
-# Facotories
+# Factories
 
 Methods for encapsulating object creation. 
 
