@@ -10,21 +10,9 @@ Collection of common everyday tasks and how to do them via the command line.
 
 ---
 
-**Problem:** Which `.bash_*` file for which settings?
-
-**Solution:** `TODO`
-
----
-
 **Problem:** Command prompt string is too long.
 
 **Solution:** Define the `PS1` var to desired prompt. *TODO: *EXAMPLE*
-
----
-
-**Problem:** You want to redefine your *home* directory. 
-
-**Solution:** *TODO*
 
 ## Searching For Things 
 

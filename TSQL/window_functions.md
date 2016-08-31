@@ -2,7 +2,7 @@
 
 A *window function* is a function that, for each row, computes a scalar result value based on a calculation against a subset of the rows from the underlying query. 
 
-You are not returning the row that matches the function definition but appending a column where the value is specified by the function definition over the window (subset of rows from underlying query result) definitioin. 
+You are not returning the row that matches the function definition but appending a column where the value is specified by the function definition over the window (subset of rows from underlying query result) definition. 
 
 **Note:** the starting point of a window function is the underlying query's result set, which generated only when you reach the SELECT phrase. Window functions are allowed only in the SELECT and ORDER BY clauses. 
 
