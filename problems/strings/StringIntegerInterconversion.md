@@ -29,3 +29,28 @@ private static int bookStringToInt(String s)
     return isNegative ? -result : result;
 }
 ```
+
+### Converting from Integer to String
+
+ Appends the modulo remainder to the string builder and reverses when done. Appending and reversing is supposedly "more efficient" than prepending
+
+```java
+private static String bookIntToString(int n)
+{
+    boolean isNegative = n < 0;
+    if(isNegative)
+        n = -n;
+    StringBuilder sb = new StringBuilder();
+    do 
+    {
+        sb.append((char) ('0' + n % 10));
+        n = n / 10;
+    } while (n != 0);
+    
+    if (isNegative)
+        sb.append('-'); // add the negative back in
+    
+    return sb.reverse().toString();
+    
+}
+```
