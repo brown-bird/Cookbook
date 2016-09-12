@@ -1,6 +1,19 @@
 # String Integer Interconversion
 7.1
 
+### Root Problem
+
+Write two programs, one to convert an integer to a string and another to convert a string to an integer. You may not use library functions such as `Integer.parseInt`. The programs should handle negative numbers. 
+
+### Sub-Problems
+
+1. Converting a single integer to a char and vice versa
+2. Handling negative numbers
+3. Efficient string building
+4. Obtaining the least significant digit of a number
+5. Dealing with the immutability of strings
+
+
 ### Notes
 
 Converting from char to int using the char's integer value:
