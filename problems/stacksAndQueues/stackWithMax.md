@@ -34,16 +34,27 @@ public class Stack
 
     public int max()
     {
+        if (empty())
+            throw new IllegalStateException("empty stack");
+        
         return this.cachedStack.peek().max;
+    }
+
+    public boolean empty()
+    {
+        return this.cachedStack.isEmpty();
     }
 
     public void push(int element)
     {
-        this.cachedStack.addFirst(element, Math.max(element, max()));
+        this.cachedStack.addFirst(element, empty() ? element : Math.max(element, max()));
     }
 
     public int pop()
     {
+        if (empty())
+            throw new IllegalStateException("empty stack");
+        
         return this.cachedStack.removeFirst().element;
     }
 
