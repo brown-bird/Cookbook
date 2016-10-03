@@ -1,6 +1,7 @@
 # Heap
+A heap (also referred to as a **Priority Queue**) is a specialized binary tree. It is a *complete binary tree*. The keys must satisfy the *heap property*; the key at each node is at least as great as the keys stored as it's children.
 
-An array based implementation of a binary tree. The left child of *k* is at *2k* and the right child is at *2k+1*. The parent of *n* is at *n/2*. A heap thus does not use pointers to connect the nodes in the tree. A heap cannot allow holes in the tree, so when a node is removed or added, 
+Can be implemented as an array. The left child of *k* is at *2k* and the right child is at *2k+1*. The parent of *n* is at *n/2*. A heap thus does not use pointers to connect the nodes in the tree. A heap cannot allow holes in the tree, so when a node is removed or added, 
 
 ### Problems solved 
 
@@ -14,9 +15,11 @@ Heaps can be *space efficient* over pointer based trees as they can be stored in
 
 ### Operations
 
-1. Insert
-2. Find Minimum/Maximum
-3. Delete Minimum/Maximum
+|Operation | Time Complexity | Java Library Equivalent|
+|-----------------------|:-------:|:------------:|
+| Find minimum/maximum  | O(1)    | peek()
+|Insert                 | O(logn) | add(element)
+|Delete minimum/maximum | O(logn) | poll()
 
 
 **Inserting**
