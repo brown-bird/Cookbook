@@ -2,6 +2,11 @@
 ### Description
 Given an array and a pivot index into the array, re-organize the elements in the array so that elements less than the pivot appear first followed by elements equal to the pivot followed by elements greater than the pivot. 
 
+
+**Naive Solution**
+
+Maintain three lists: values less than partition (p), equal to p, and greater than p. Fill the array with the contents of the lists. Time = O(n), Space = O(n)
+
 **Single Pass, Time = O(n), Space = O(1)**
 
 The key is to maintain four sub arrays:
