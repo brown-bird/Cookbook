@@ -137,3 +137,115 @@ Get title of books where "Ullman" is an author and "Widom" is not an author
         Authors/Author/Last_Name = "Ullman" and
         count(Authors/Author[Last_Name = "Widom"]) = 0
     ]
+
+    
+## XQUERY
+
+Expression Language (compositional)
+
+Titles of books costing less than $90 where Ullman is an author
+
+    for $b in doc("Bookstore.xml")/Bookstore/Book
+    where $b/@Price < 90
+        and $b/Authors/Author/Last_Name = "Ullman"
+    return $b/Title
+
+Titles and author first names of books whose title contains one of the author's first names
+
+    for $b in doc("Bookstore.xml")/Bookstore/Book
+    where some $fn in $b/Author/Authors/First_Name
+        satisfies contains($b/Title, $fn)
+    return 
+    <Book>
+        {$b/Title}
+        {$b/Authors/Author/First_Name}
+    </Book>
+
+Titles and author first names of books whose title contains one of the author's first names. Restrict the output to the first names which are contained in the title of the book
+
+    for $b in doc("Bookstore.xml")/Bookstore/Book
+    where some $fn in $b/Author/Authors/First_Name
+        satisfies contains($b/Title, $fn)
+    return 
+        <Book>
+            {$b/Title}
+            {for $fn in $b/Authors/Author/First_Name
+                where contains($b/Title, $fn) return $fn}
+        </Book>
+
+Find the average book price
+
+    <Average>
+        {let $plist := doc("Bookstore.xml")/Bookstore/Book/@Price
+            return avg($plist)}
+    </Average>
+
+Books whose price is below average
+
+    let $a := avg(doc("Bookstore.xml")/Bookstore/Book/@Price)
+    for $b in doc("Bookstore.xml")/Bookstore/Book
+    where $b/@Price < $a
+    return 
+        <Book>
+            {$b/Title}
+            <Price>{$b/data(@Price)}</Price>
+        </Book>
+
+Titles and prices sorted by price
+
+    for $b in doc("Bookstore.xml")/Bookstore/Book
+    order by xs:int($b/@Price)
+    return
+        <Book>
+            {$b/Title}
+            <Price>{$b/data(@Price)}</Price>
+        </Book>
+
+All last names in database, removing duplicates, returned as elements
+
+    for $n distinct-values(doc("Bookstore.xml")//Last_Name)
+    return <Last_Name>{$n}</Last_Name>
+
+Books where every author's first name includes "J"
+
+    for $b in doc("Bookstore.xml")/Bookstore/Book
+    where every $fn in $b/Authors/Author/First_Name
+        satisfies contains($fn, "J")
+    return $b
+
+All pairs of titles containing a shared author (like a self join). We use the `<` operator to eliminate books matching themselves and keep from receiving the result twice, once for each xml instance.
+
+    for $b1 in doc("Bookstore.xml")/Bookstore/Book
+    for $b2 in doc("Bookstore.xml")/Bookstore/Book
+    where $b1/Authors/Author/Last_Name = $b2/Authors/Author/Last_Name
+        and $b1/Title < $b2/Title
+    return 
+        <BookPair>
+            <Title1>{data($b1/Title)}</Title1>
+            <Title2>{data($b2/Title)}</Title2>
+        </BookPair>
+
+
+Invert data: Authors with books they've written
+
+    <InvertBookstore>
+        {
+            for $Ln in distinct-values(doc("Bookstore.xml")//Author/Last_Name)
+            for $fn in distinct-values(doc("Bookstore.xml")//Author/[Last_Name = $Ln]/First_Name)
+            
+            return 
+                <Author>
+                    <First_Name>{$fn}</First_Name>
+                    <Last_Name>{$Ln}</Last_Name>
+                    {
+                        for $b in doc("Bookstore.xml")/Bookstore/Book[Authors/Author/Last_Name = $Ln]
+                        return 
+                            <Book>
+                                {$b/@ISBN} {$b/@Price} {$b/@Edition}
+                                {$b/Title} {$b/Remark}
+                            </Book>
+                    }
+                </Author>
+
+        }
+    </InvertBookstore>
