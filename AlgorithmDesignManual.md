@@ -91,3 +91,19 @@ Permutations are likely the object in question whenever your problem seeks an �
 **Strings** – which represent sequences of characters or patterns. For example, the names of students in a class can be represented by strings. Strings are likely the object in question whenever you are dealing with “text,” “charac- ters,” “patterns,” or “labels.”
 
 >Take-Home Lesson: Modeling your application in terms of well-defined struc- tures and algorithms is the most important single step towards a solution.
+
+<br>
+
+---
+
+## Data structures
+
+### Fundamental Abstract Data Types
+
+1. Containers
+2. Dictionaries
+3. Priority Queues
+
+**Contiguously-allocated structures** are composed of single slabs of memory, and include arrays, matrices, heaps, and hash tables.
+
+**Linked data structures** are composed of distinct chunks of memory bound together by pointers, and include lists, trees, and graph adjacency lists.
