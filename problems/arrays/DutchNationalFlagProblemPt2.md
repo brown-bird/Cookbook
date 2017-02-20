@@ -3,11 +3,13 @@
 Given an array and a pivot index into the array, re-organize the elements in the array so that elements less than the pivot appear first followed by elements equal to the pivot followed by elements greater than the pivot. 
 
 
-**Naive Solution**
+### Naive Solution
 
 Maintain three lists: values less than partition (p), equal to p, and greater than p. Fill the array with the contents of the lists. Time = O(n), Space = O(n)
 
-**Single Pass, Time = O(n), Space = O(1)**
+###Single Pass
+
+*Time = O(n), Space = O(1)*
 
 The key is to maintain four sub arrays:
 
@@ -27,21 +29,21 @@ Keep the following invariants during partitioning
 
 ```java
 public static void dutchFlagPartition(Comparable[] ara, int pivot)
+{
+    int smaller = 0, equal = 0, larger = ara.length;
+    while (equal < larger)
     {
-        int smaller = 0, equal = 0, larger = ara.length;
-        while (equal < larger)
+        if (ara[equal].compareTo(ara[pivot]) < 0)
         {
-            if (ara[equal].compareTo(ara[pivot]) < 0)
-            {
-                swap(ara, smaller++, equal++);
-            } else if (ara[equal].compareTo(ara[pivot]) == 0)
-            {
-                ++equal;
-            } else // ara[equal] > pivot
-            {
-                swap(ara, larger--, equal);
-	
-            }
+            swap(ara, smaller++, equal++);
+        } else if (ara[equal].compareTo(ara[pivot]) == 0)
+        {
+            ++equal;
+        } else // ara[equal] > pivot
+        {
+            swap(ara, larger--, equal);
+
         }
     }
+}
 ```

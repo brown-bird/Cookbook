@@ -20,3 +20,8 @@ public static double computeMaxProfit(List<Double> prices)
 	}
 	return maxProfit;
 }
+~~~
+
+### Notes
+
+1. The **max profit** (for each element) is defined in terms of the current element and what's been processed so far. This definition and caculation as we go is the key insight to this solution. Instead of looking ahead in the array to calculate the max profit for the current element we just keep track of the minimum so far. 
