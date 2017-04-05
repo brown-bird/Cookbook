@@ -8,7 +8,16 @@ Methods available on XML instances.
 
 **value()** Returns scalar value cast to a SQL Server type.
 
-**exist()** Returns a SQL bit value of 1 if the XQuery returns a result, 0 if there XQuery returns no result, or NULL if the xml instance is NULL.
+**exist()** Returns a SQL bit value of 1 if the XQuery returns a result, 0 if there XQuery returns no result, or NULL if the xml instance is NULL. 
+
+example checking for the existence of a node with a specific value:
+```sql
+
+  SELECT ...
+  FROM ...
+  WHERE myTable.MyXmlColumn.exist('//pathToNode/node[. eq "target value"]')
+
+```
 
 **modify()** Can only be used with the SET clause. Execute XML Data Manipulation Language statements against xml.
 
