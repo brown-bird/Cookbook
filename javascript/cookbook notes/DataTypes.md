@@ -89,3 +89,14 @@ bool1 === bool2 // false
 ```
 
 Primative values are strictly equal to literals, while object instances are not. Primative are compared by value and Objects are not.
+
+### How can you check the type of a variable?
+
+You can use the `typeof` operator. The list of possible values is:
+
+1. number
+2. string
+3. boolean
+4. function
+5. object // if the variable is null, an array, or another JavaScript object
+6. undefined
