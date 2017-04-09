@@ -1,9 +1,10 @@
 ## General
 1. [markdown syntax](https://github.com/rclay83/Reference-Sandbox/blob/master/markdown/MacDown_help_reference.md) - Coolest thing ever.
-* [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
+2. [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
 
 
 <br>
+
 ## SQL
 1. [Single Table Queries](https://github.com/rclay83/Cookbook/blob/master/TSQL/T-SQL_fundamentals_my_examples/ch2_single_table_queries.md#single-table-queries-t-sql-fundamentals-ch2)
 2. [Greatest *N* Per Group](https://github.com/rclay83/Cookbook/blob/master/TSQL/greatest_n_per_group.md#greatest-n-per-group)
@@ -12,15 +13,17 @@
 5. [Window Functions](https://github.com/rclay83/Cookbook/blob/master/TSQL/window_functions.md#window-functions)
 
 <br>
+
 ## Javascript
 
-1. [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/) - javascript quirks
-2. [Eloquent JavaScript](http://eloquentjavascript.net/)
+* [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/) - javascript quirks
+* [Eloquent JavaScript](http://eloquentjavascript.net/)
 
 <br>
+
 ## Online Books
 
-1. [free-programming-books](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md) - Massive collection of online books and courses
+* [free-programming-books](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md) - Massive collection of online books and courses
 * [Clojure for the Brave](http://www.braveclojure.com/)
 * [Learn you Haskell for Great Good](http://learnyouahaskell.com/chapters)
 * [Why's (Poignant) guide to Ruby](http://poignant.guide/book/) - funny cartoon book about foxes and ruby and a built in shell!
@@ -32,6 +35,7 @@
 * [MASSIVE LIST OF ALL THINGS IN ALL LANGUAGES](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md)
 
 <br>
+
 ## Online Tools
-1. [dillinger.io](dillinger.io) - *Markdown Editor*
-2. [jsFiddle](https://jsfiddle.net/) - *JavaScript Editor*
+* [dillinger.io](dillinger.io) - *Markdown Editor*
+* [jsFiddle](https://jsfiddle.net/) - *JavaScript Editor*
