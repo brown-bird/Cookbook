@@ -33,7 +33,7 @@
 * [Tortoise SVN Daily Use Guide](https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug.html)
 * [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 * [MASSIVE LIST OF ALL THINGS IN ALL LANGUAGES](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md)
-* [Obey the Testing Goat - Test Driven Development With Python] (http://www.obeythetestinggoat.com/pages/book.html#toc)
+* [Obey the Testing Goat - Test Driven Development With Python](http://www.obeythetestinggoat.com/pages/book.html#toc)
 
 <br>
 
