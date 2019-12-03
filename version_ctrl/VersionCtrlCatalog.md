@@ -7,7 +7,7 @@ ahead of the remote.
 
 **Solution**
 ~~~
-git reset --hard origin/master
+git reset --hard origin/<branchName>
 ~~~
 
 
