@@ -1,26 +1,34 @@
-# Version Control
-
-- Reverting all changes From a commit
-- Merging a single revision
-- Merge a range of revisions
-- Delete Local Copy Only
+# Git Version Control Cookbook
 
 
-### Reverting all changes From a commit
+<br/></br>
+<br/></br>
+## Reverting
+**Problem**: Your branch is ahead of the remote by some number of commits and you want to discard all commits which are 
+ahead of the remote.
 
-* Git Solution
-* Subversion solution
+**Solution**
+~~~
+git reset --hard origin/master
+~~~
 
-### Merging a single revision 
 
-* Git 
-* Subversion
 
-### Merge a range of revisions
+<br/></br>
+<br/></br>
+## Merging
+* a single revision 
+* a range of revisions
 
-* Git
-* Subversion
 
-### Delete Local Copy Only
- * Git
- * Subversion
+
+<br/></br>
+<br/></br>
+## Deleting
+**Problem:** You have a branch you want to delete locally only, leaving the remote branch
+in tact.
+
+**Solution:**
+~~~
+git branch -D <branchName>
+~~~
