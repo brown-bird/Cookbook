@@ -8,6 +8,19 @@
 **Solution:** `$ git checkout -b <new branch name>`
 
 
+**Problem:** Create a hotfix branch from master.  
+**Solution:** Stash or commit any uncommitted changes. Switch to master and create a new branch. Make and commit hotfix changes
+Switch to master and merge the hotfix in.
+~~~
+$ git stash
+$ git checkout master
+$ git checkout -b hotfix
+... make some hotfix changes
+$ git commit -am 'committing hotfix changes'
+$ git checkout master
+$ git merge hotfix
+~~~ 
+
 <br/></br>
 ## Reverting
 **Problem**: Your branch is ahead of the remote by some number of commits and you want to discard all commits which are 
