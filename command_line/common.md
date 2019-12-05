@@ -62,3 +62,12 @@ You can use the `-n` option for `head` to specify a custom number of output line
 `f` - scroll forward one page
 
 `b` - scroll backwards one page
+
+## Opening Files
+
+Start a program from the command line on windows like Notepad++ when it is not in your path.  
+Run `$ start notepad++`. 
+
+## Editing Files
+
+There are many terminal editors. Run `nano <fileToEdit>`.

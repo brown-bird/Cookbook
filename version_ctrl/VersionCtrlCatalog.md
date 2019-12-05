@@ -83,3 +83,14 @@ when you have commits on the branch that aren't merged.
 **Problem:** View commit history for branch including divergent commits as text based graph.  
 **Solution:** `$ git log --oneline --decorate --graph --all`  
 
+<br/></br>
+## Stashing Changes
+**Problem:** You want to record the state of your working directory but want to go back to a 
+clean directory.  
+**Solution:** `$ git stash push` or `$ git stash` saves your local modifications and reverts the working directory to match the HEAD commit.  
+
+**Problem:** Show stashed changes.  
+**Solution:** `$ git stash list` will show stashed changes. `$ git stash show` will allow you to inspect stashed changes.  
+
+**Problem:** Apply stashed changes.  
+**Solution:** `git stash pop` or `git stash apply`. This can apply your stashed changes on top of any commits you've since made.  `apply` does the same as `pop` but doesn't remove the stash from the stash list.
