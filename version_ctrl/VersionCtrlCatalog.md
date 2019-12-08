@@ -94,3 +94,21 @@ clean directory.
 
 **Problem:** Apply stashed changes.  
 **Solution:** `git stash pop` or `git stash apply`. This can apply your stashed changes on top of any commits you've since made.  `apply` does the same as `pop` but doesn't remove the stash from the stash list.
+
+
+<br/></br>
+### Push a current repo to Github  
+
+~~~
+// initialize the repo if not already done.
+$ git init
+$ git add .
+$ git commit -m 'first commit'
+// create the remote repo on Github and copy the remote repo url
+// Setup the remote repo in your local repo
+$ git remote add origin <remoteUrl>
+$ git remote -v
+// push your current master branch to the remote
+$ git push -u origin master
+// done
+~~~
