@@ -18,7 +18,15 @@ Find files by name. Performs rapid database search of pathnames and then outputs
 Example using `locate` combined with `grep` to perform a more cmplicated search: `locate zip | grep bin`
 ### find
 
-Search for files in a directory heirachry. `find` searches a given directory (and it's subdirectories) for fiiles based on a variety of attributes. 
+Search for files in a directory heirachry. `find` searches a given directory (and it's subdirectories) for fiiles based on a variety of attributes.  
 
-### xargs
+Find a file called bacon.txt in the current directory and subdirectories  
+`$ find . -name 'bacon.txt'`  
+
+Find all `.jpg` files in the `/home` and subdirectories.  
+`$ find /home -name *.jpg`  
+
+If you want find not to ignore symbolic links(shortcut files), use the `-L` option.  
+
+More useful examples here https://www.linode.com/docs/tools-reference/tools/find-files-in-linux-using-the-command-line/  
 
