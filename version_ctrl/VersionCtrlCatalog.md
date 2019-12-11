@@ -1,15 +1,15 @@
 # Git Cookbook  
 
 ## Branching
-**Problem:** Switching branches  
-**Solution:** `$ git checkout <branch name>`
+## Switching branches  
+Use `$ git checkout <branch name>`
 
-**Problem:** Create a new branch and switch to it.  
-**Solution:** `$ git checkout -b <new branch name>`
+## Create a new branch and switch to it.  
+Use `$ git checkout -b <new branch name>`
 
 
-**Problem:** Create a hotfix branch from master.  
-**Solution:** Stash or commit any uncommitted changes. Switch to master and create a new branch. Make and commit hotfix changes
+## Create a hotfix branch from master.  
+Stash or commit any uncommitted changes. Switch to master and create a new branch. Make and commit hotfix changes
 Switch to master and merge the hotfix in.
 ~~~
 $ git stash
@@ -23,21 +23,21 @@ $ git merge hotfix
 
 <br/></br>
 ## Branch Management
-**Problem:** Show listing of current branches.  
-**Solution:** run `$ git branch` with no arguments.
+### Show listing of current branches.  
+Use `$ git branch` with no arguments.
 
-**Problem:** Show listing of branches you have currently merged into the branch you are on.  
-**Solution:** run `$ git branch --merged`. To See branches merged into a target branch run `$ git branch --merged <target branch name>`.
+### Show listing of branches you have currently merged into the branch you are on.  
+Use `$ git branch --merged`. To See branches merged into a target branch run `$ git branch --merged <target branch name>`.
 Use the `--no-merged` option to see branches not yet merged.   
 
-**Problem:**  See the last commit on each branch. 
-**Solution:** `$ git branch -v`
+### See the last commit on each branch. 
+Use `$ git branch -v`
 
 <br/></br>
 ## Reverting
-**Problem**: Your branch is ahead of the remote by some number of commits and you want to discard all commits which are 
+### Your branch is ahead of the remote by some number of commits and you want to discard all commits which are 
 ahead of the remote.  
-**Solution:** `$ git reset --hard origin/<branch name>`
+Use `$ git reset --hard origin/<branch name>`
 
 
 
@@ -47,29 +47,29 @@ Todo:
 * a single revision 
 * a range of revisions  
 
-**Problem:** update branch from master  
-**Solution:** From the feature branch you want to update run: `$ git merge master`
+###update branch from master  
+From the feature branch you want to update run: `$ git merge master`
 
 <br/></br>
 ## Merge Conflicts
-**Problem:** You want to see unmerged files after notification of a merge conflict.  
-**Solution:** `$ git status`  
+### You want to see unmerged files after notification of a merge conflict.  
+Use `$ git status`  
 
-**Problem:** Mark a previously conflicted file as resolved.  
-**Solution:** `$ git add <resolvedFileName>`  
+### Mark a previously conflicted file as resolved.  
+Use `$ git add <resolvedFileName>`  
 
-**Problem:** Run a specific mergetool from the command line.  
-**Solution:** `$ git mergetool -t tortoisemerge` will run tortoise merge on every file that has a conflict.
+### Run a specific mergetool from the command line.  
+Use `$ git mergetool -t tortoisemerge` will run tortoise merge on every file that has a conflict.
 
-**Problem:** Finalizing merge resolution.  
-**Solution:** After staging all your resolved conflicts with `$ git add <resolved confict file name>` finalize your merge with
+### Finalizing merge resolution.  
+After staging all your resolved conflicts with `$ git add <resolved confict file name>` finalize your merge with
 `$ git commit`. 
 
 <br/></br>
 ## Deleting
-**Problem:** You have a branch you want to delete locally only, leaving the remote branch
+### You have a branch you want to delete locally only, leaving the remote branch
 in tact.  
-**Solution:** `$ git branch -d <branch name>`. Use the `-D` option instead of `-d` if you need to force the deletion, say 
+Use `$ git branch -d <branch name>`. Use the `-D` option instead of `-d` if you need to force the deletion, say 
 when you have commits on the branch that aren't merged.  
 
 
@@ -77,26 +77,26 @@ when you have commits on the branch that aren't merged.
 
 <br/></br>
 ## History
-**Problem:** View commit history.  
-**Solution:** `$ git log`  
+### View commit history.  
+Use `$ git log`  
 
-**Problem:** View commit history for branch including divergent commits as text based graph.  
-**Solution:** `$ git log --oneline --decorate --graph --all`  
+### View commit history for branch including divergent commits as text based graph.  
+Use `$ git log --oneline --decorate --graph --all`  
 
 <br/></br>
 ## Stashing Changes
-**Problem:** You want to record the state of your working directory but want to go back to a 
-clean directory.  
-**Solution:** `$ git stash push` or `$ git stash` saves your local modifications and reverts the working directory to match the HEAD commit.  
+### Save your changes and return to a clean directory  
+Use `$ git stash push` or `$ git stash` saves your local modifications and reverts the working directory to match the HEAD commit.  
 
-**Problem:** Show stashed changes.  
-**Solution:** `$ git stash list` will show stashed changes. `$ git stash show` will allow you to inspect stashed changes.  
+### Show stashed changes.  
+Use `$ git stash list` will show stashed changes. `$ git stash show` will allow you to inspect stashed changes.  
 
-**Problem:** Apply stashed changes.  
-**Solution:** `git stash pop` or `git stash apply`. This can apply your stashed changes on top of any commits you've since made.  `apply` does the same as `pop` but doesn't remove the stash from the stash list.
+### Apply stashed changes.  
+`git stash pop` or `git stash apply`. This can apply your stashed changes on top of any commits you've since made.  `apply` does the same as `pop` but doesn't remove the stash from the stash list.
 
 
 <br/></br>
+## Remotes
 ### Push a current repo to Github  
 
 ~~~
@@ -112,3 +112,9 @@ $ git remote -v
 $ git push -u origin master
 // done
 ~~~
+  
+
+## Reverting Changes  
+
+### Unstage a staged file 
+If you want to unstage a file use `$ git reset HEAD <filename>`
