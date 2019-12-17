@@ -115,6 +115,10 @@ $ git push -u origin master
   
 
 ## Reverting Changes  
+`$ git status` tells us how to undo some things.
 
 ### Unstage a staged file 
 If you want to unstage a file use `$ git reset HEAD <filename>`
+
+### Revert changes since last commit
+Use `$ git checkout <file>`
