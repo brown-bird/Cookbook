@@ -76,9 +76,13 @@ when you have commits on the branch that aren't merged.
 
 
 <br/></br>
-## History
+## History  
+
 ### View commit history.  
 Use `$ git log`  
+
+### View last to commit history before HEAD  
+Use `$ git log -2 HEAD`
 
 ### View commit history for branch including divergent commits as text based graph.  
 Use `$ git log --oneline --decorate --graph --all`  
@@ -115,7 +119,19 @@ $ git push -u origin master
   
 
 ## Reverting Changes  
-`$ git status` tells us how to undo some things.
+`$ git status` tells us how to undo some things.  
+
+See documentation for `git revert`. Simple usage is `git revert <commit>`. Beware that reverting merges requires you to pass the parent Id of the mainline like `git revert -m 1 <commit>`.  
+The parent id can be found by running `git show --pretty=raw <merge_commit>` as explained [here](https://stackoverflow.com/questions/12626754/git-cherry-pick-syntax-and-merge-branches/12628579#12628579)  
+The branch order starts at 1 with the first hash listed  
+~~~
+commit fc70b1e9f940a6b511cbf86fe20293b181fb7821
+tree 8d2ed6b21f074725db4f90e6aca1ebda6bc5d050 
+parent 54d59bedb9228fbbb9d645b977173009647a08a9 = <parent1_commit>
+parent 80f1016b327cd8482a3855ade89a41ffab64a792 = <parent2_commit>
+~~~  
+
+See cherry-pick documentation for more possible examples.  
 
 ### Unstage a staged file 
 If you want to unstage a file use `$ git reset HEAD <filename>`
