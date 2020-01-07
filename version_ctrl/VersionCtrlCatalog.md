@@ -138,3 +138,16 @@ If you want to unstage a file use `$ git reset HEAD <filename>`
 
 ### Revert changes since last commit
 Use `$ git checkout <file>`
+
+## Alias  
+
+### Define new alias  
+Use `$ git config --global alias.co checkout` to assign co as the alias for the checkout command.  
+
+## View config settings  
+
+To view all settings: `$ git config -l` or `-list`  
+
+To view a setting for a specific key, use `$ git config --get <key_name>`. For example: `$ git config --get alias.co` to see the value of the co alias.  
+
+To view config settings in an editor use the `-e` option like `$ git config --global -e`.
