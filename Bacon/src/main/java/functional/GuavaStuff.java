@@ -1,9 +1,11 @@
 package functional;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 import static com.google.common.collect.MoreCollectors.onlyElement;
+import static com.google.common.collect.MoreCollectors.toOptional;
 
 public class GuavaStuff
 {
@@ -17,4 +19,13 @@ public class GuavaStuff
                 .collect(onlyElement());
 
     }
+
+    public static Optional<Integer> filterToSingleOptionalElement(Predicate<Integer> filter, Integer... nums)
+    {
+        return Arrays.stream(nums)
+                .filter(filter)
+                .map(Integer::valueOf)
+                .collect(toOptional());
+    }
+
 }
