@@ -1,37 +1,20 @@
 package functional;
 
-import com.google.common.collect.Lists;
+import java.util.Arrays;
+import java.util.function.Predicate;
 
 import static com.google.common.collect.MoreCollectors.onlyElement;
 
 public class GuavaStuff
 {
-    public static void runExamples()
-    {
-        filterToSingleElement();
-        filterToSingleElementThrowsException();
-    }
-
-    private static void filterToSingleElement()
+    public static Integer filterToSingleElement(Predicate<Integer> filter, Integer... nums)
     {
         // Filter a collection to one element using Guava Stream Collector
-        Integer one = Lists.<Integer>newArrayList(1, 2, 3, 4).stream()
-                .filter( num -> num < 2)
+        // Throws exception when multiple values are returned
+        return Arrays.stream(nums)
+                .filter(filter)
                 .map(Integer::valueOf)
                 .collect(onlyElement());
-
-        System.out.println(one);
-    }
-
-    private static void filterToSingleElementThrowsException()
-    {
-        // Filter a collection to one element using Guava Stream Collector
-        Integer one = Lists.<Integer>newArrayList(1, 2, 3, 4).stream()
-                .filter( num -> num < 3)
-                .map(Integer::valueOf)
-                .collect(onlyElement());
-
-        System.out.println(one);
 
     }
 }
