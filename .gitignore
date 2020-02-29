@@ -10,3 +10,4 @@ nbproject/
 *mockito*.jar
 /Testing/examples/global_dependency/Inheritance/build/
 /Testing/examples/global_dependency/Euler/build/
+.idea/
