@@ -1,0 +1,2 @@
+Add some bit shifting examples
+ to operators.java
