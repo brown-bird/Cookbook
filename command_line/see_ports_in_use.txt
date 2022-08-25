@@ -1,0 +1,11 @@
+How to see ports in use on macos from terminal
+Source: https://apple.stackexchange.com/questions/117644/how-can-i-list-my-open-network-ports-with-netstat
+
+USING LSOF
+   sudo lsof -PiTCP -sTCP:LISTEN
+
+   * Can be used without sudo to change the scope
+
+USING netstat
+
+    netstat -anvp tcp | awk 'NR<3 || /LISTEN/'  
