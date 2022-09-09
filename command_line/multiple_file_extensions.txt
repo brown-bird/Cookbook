@@ -1,0 +1,7 @@
+Example grepping python and java files using 'brace expansion'
+
+    grep -E '#how-to.*;' **/*.{py,java}
+
+Note that there are no spaces in the glob pattern: 
+    
+    **/*.{py,java}
