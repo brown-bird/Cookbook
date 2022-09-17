@@ -7,3 +7,5 @@ SOLUTION
     Use the `json_pp` command like: 
 
         curl -v localhost:/8080/employees/1 | json_pp
+
+#how-to format json on command line / curl request;
